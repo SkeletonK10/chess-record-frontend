@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from '@emotion/styled'
 
-import data from '../data'
+import data from '../../data'
 
-const DivMainSubTitle = styled.div`
+const DivSubTitle = styled.div`
   width: 100%;
   margin-top: 10px;
   
@@ -14,12 +14,12 @@ const DivMainSubTitle = styled.div`
   color: #8c531b;
 `;
 
-const MainSubTitle: React.FC = () => {
+const SubTitle: React.FC = () => {
   return (
-    <DivMainSubTitle>
+    <DivSubTitle>
         {data.subTitle}
-    </DivMainSubTitle>
+    </DivSubTitle>
   );
 }
 
-export default MainSubTitle;
+export default SubTitle;
