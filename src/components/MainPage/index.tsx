@@ -3,7 +3,6 @@ import styled from '@emotion/styled'
 
 import Header from '../Header'
 import Title from './Title'
-import SubTitle from './SubTitle'
 
 const DivMainPage = styled.div`
   width: 100%;
@@ -18,7 +17,6 @@ const MainPage: React.FC = () => {
     <DivMainPage>
       <Header />
       <Title />
-      <SubTitle />
     </DivMainPage>
   );
 }
