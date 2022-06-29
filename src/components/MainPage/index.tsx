@@ -2,10 +2,10 @@ import React from 'react';
 import styled from '@emotion/styled'
 
 import Header from '../Header'
-import MainImage from '../MainImage'
+import MainImage from './MainImage'
 import Title from './Title'
 
-const DivMainPage = styled.div`
+const MainPage = styled.div`
   width: 100%;
   height: 100%;
   position: absolute;
@@ -13,14 +13,14 @@ const DivMainPage = styled.div`
   background-color: #ece6cc;
 `;
 
-const MainPage: React.FC = () => {
+const Comp: React.FC = () => {
   return (
-    <DivMainPage>
+    <MainPage>
       <Header />
       <MainImage />
       <Title />
-    </DivMainPage>
+    </MainPage>
   );
 }
 
-export default MainPage;
+export default Comp;

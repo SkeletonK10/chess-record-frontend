@@ -3,10 +3,10 @@ import styled from '@emotion/styled'
 
 import data from '../data'
 
-const DivHeader = styled.div`
+const Header = styled.div`
   width: 100%;
   height: 5%;
-  padding-left: 3%;
+  padding-left: 2%;
   
   display: flex;
   align-items: center;
@@ -17,12 +17,12 @@ const DivHeader = styled.div`
   background-color: #8c531b;
 `;
 
-const Header: React.FC = () => {
+const Comp: React.FC = () => {
   return (
-    <DivHeader>
+    <Header>
         {data.title}
-    </DivHeader>
+    </Header>
   );
 }
 
-export default Header;
+export default Comp;

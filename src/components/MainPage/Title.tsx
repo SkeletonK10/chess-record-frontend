@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 
 import data from '../../data'
 
-const DivTitle = styled.div`
+const Title = styled.div`
   width: 100%;
   height: 25%;
   
@@ -15,7 +15,7 @@ const DivTitle = styled.div`
   color: #8c531b;
 `;
 
-const DivSubTitle = styled.div`
+const SubTitle = styled.div`
   width: 100%;
   margin-top: 10px;
   
@@ -26,17 +26,17 @@ const DivSubTitle = styled.div`
   color: #8c531b;
 `;
 
-const Title: React.FC = () => {
+const Comp: React.FC = () => {
   return (
     <div>
-      <DivTitle>
+      <Title>
         {data.title}
-      </DivTitle>
-      <DivSubTitle>
+      </Title>
+      <SubTitle>
         {data.subTitle}
-      </DivSubTitle>
+      </SubTitle>
     </div>
   );
 }
 
-export default Title;
+export default Comp;

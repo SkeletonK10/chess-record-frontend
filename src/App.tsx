@@ -4,9 +4,7 @@ import MainPage from './components/MainPage'
 
 const App: React.FC = () => {
   return (
-    <div>
       <MainPage />
-    </div>
   );
 }
 

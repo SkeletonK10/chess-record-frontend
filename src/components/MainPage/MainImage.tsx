@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled'
 
-const ImgMainImage = styled.img`
+const MainImage = styled.img`
   width: 100%;
   height: 30%;
   margin-top: 4%;
@@ -9,10 +9,10 @@ const ImgMainImage = styled.img`
   object-fit: contain;
 `;
 
-const MainImage: React.FC = () => {
+const Comp: React.FC = () => {
   return (
-    <ImgMainImage src="img/main_image.jpg" alt="Chess: Main Image" />
+    <MainImage src="img/main_image.jpg" alt="Chess: Main Image" />
   );
 }
 
-export default MainImage;
+export default Comp;
