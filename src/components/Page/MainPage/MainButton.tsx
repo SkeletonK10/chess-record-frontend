@@ -8,12 +8,16 @@ const MainButton = styled.div`
   width: 30%;
   height: 10%;
   margin-top: 3%;
-  border: 3px solid ${palette.font};
+  border: 3px solid ${palette.wood};
   border-radius: 50px;
-  background-color: ${palette.background};
+  background-color: ${palette.ivory};
   
   &:hover {
-    background-color: ${palette.hover};
+    background-color: ${palette.ivoryHover};
+  }
+  
+  &:active {
+    background-color:${palette.ivoryActive};
   }
   
   display: flex;

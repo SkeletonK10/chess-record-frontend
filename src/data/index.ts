@@ -4,7 +4,8 @@ export const text = {
 };
 
 export const palette = {
-  background: '#ece6cc',
-  font: '#8c531b',
-  hover: '#fff9dc',
+  ivory: '#ece6cc',
+  wood: '#8c531b',
+  ivoryHover: '#fff9dc',
+  ivoryActive: '#c2bda4',
 };
