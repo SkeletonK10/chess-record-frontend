@@ -22,8 +22,8 @@ const Comp: React.FC = () => {
       <Header />
       <MainImage />
       <Title />
-      <MainButton text="경기 기록 추가" />
-      <MainButton text="경기 기록 조회" />
+      <MainButton text="경기 기록 추가" path="/newgame/"/>
+      <MainButton text="경기 기록 조회" path="/game/"/>
     </MainPage>
   );
 }

@@ -1,5 +1,6 @@
 import React from 'react';
-import styled from '@emotion/styled'
+import styled from '@emotion/styled';
+import { useNavigate } from 'react-router-dom';
 
 import { palette } from '../../data';
 
@@ -24,12 +25,14 @@ const MainButton = styled.div`
 
 interface ButtonProps {
   text: string;
+  path: string;
 }
 
 const Comp: React.FC<ButtonProps> = (props) => {
+  const navigate = useNavigate();
   return (
-    <MainButton>
-      {props.text}
+    <MainButton onClick={() => navigate(props.path)}>
+        {props.text}
     </MainButton>
   );
 }
