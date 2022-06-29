@@ -7,7 +7,11 @@ const MainButton = styled.div`
   margin-top: 4%;
   border: 3px solid #8c531b;
   border-radius: 50px;
-  background-color: #fff9dc;
+  background-color: #ece6cc;
+  
+  &:hover {
+    background-color: #fff9dc;
+  }
   
   display: flex;
   justify-content: center;
