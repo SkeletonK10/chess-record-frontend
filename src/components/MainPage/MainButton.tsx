@@ -2,11 +2,12 @@ import React from 'react';
 import styled from '@emotion/styled'
 
 const MainButton = styled.div`
-  width: 40%;
+  width: 30%;
   height: 10%;
   margin-top: 4%;
+  border: 3px solid #8c531b;
   border-radius: 50px;
-  background-color: #FFFFFF;
+  background-color: #fff9dc;
   
   display: flex;
   justify-content: center;
