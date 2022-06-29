@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled'
 
-import data from '../../data'
+import { text } from '../../data'
 
 const Title = styled.div`
   width: 100%;
@@ -27,10 +27,10 @@ const Comp: React.FC = () => {
   return (
     <div>
       <Title>
-        {data.title}
+        {text.title}
       </Title>
       <SubTitle>
-        {data.subTitle}
+        {text.subTitle}
       </SubTitle>
     </div>
   );

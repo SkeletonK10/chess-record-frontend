@@ -1,16 +1,18 @@
 import React from 'react';
 import styled from '@emotion/styled'
 
+import { palette } from '../../data';
+
 const MainButton = styled.div`
   width: 30%;
   height: 10%;
   margin-top: 4%;
-  border: 3px solid #8c531b;
+  border: 3px solid ${palette.font}};
   border-radius: 50px;
-  background-color: #ece6cc;
+  background-color: ${palette.background};
   
   &:hover {
-    background-color: #fff9dc;
+    background-color: ${palette.hover};
   }
   
   display: flex;

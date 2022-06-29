@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from '@emotion/styled'
 
-import data from '../data'
+import { text, palette } from '../data'
 
 const Header = styled.div`
-  width: 100%;
+  width: 98%;
   height: 5%;
   padding-left: 2%;
   
@@ -12,15 +12,15 @@ const Header = styled.div`
   align-items: center;
   
   font-size: 1.4rem;
-  color: #ece6cc;
+  color: ${palette.font};
   
-  background-color: #8c531b;
+  background-color: ${palette.background};
 `;
 
 const Comp: React.FC = () => {
   return (
     <Header>
-        {data.title}
+        {text.title}
     </Header>
   );
 }
