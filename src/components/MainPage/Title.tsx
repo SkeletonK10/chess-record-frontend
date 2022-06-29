@@ -11,18 +11,18 @@ const Title = styled.div`
   justify-content: center;
   align-items: flex-end;
   
-  font-size: 60px;
+  font-size: 3.6rem;
   color: #8c531b;
 `;
 
 const SubTitle = styled.div`
   width: 100%;
-  margin-top: 10px;
+  margin-top: 1%;
   
   display: flex;
   justify-content: center;
   
-  font-size: 20px;
+  font-size: 1.4rem;
   color: #8c531b;
 `;
 
