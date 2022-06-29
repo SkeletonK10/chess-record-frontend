@@ -20,7 +20,7 @@ const Header = styled.div`
 const Comp: React.FC = () => {
   return (
     <Header>
-        {text.title}
+        {text.main.title}
     </Header>
   );
 }

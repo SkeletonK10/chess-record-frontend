@@ -7,6 +7,8 @@ import MainImage from './MainImage'
 import Title from './Title'
 import MainButton from './MainButton'
 
+import { text } from '../../../data';
+
 
 const Comp: React.FC = () => {
   return (
@@ -14,8 +16,8 @@ const Comp: React.FC = () => {
       <Header />
       <MainImage />
       <Title />
-      <MainButton text="경기 기록 추가" path="/newgame/"/>
-      <MainButton text="경기 기록 조회" path="/game/"/>
+      <MainButton text={text.gameAdd.title} path="/newgame/"/>
+      <MainButton text={text.gameList.title} path="/game/"/>
     </PageStyle>
   );
 }

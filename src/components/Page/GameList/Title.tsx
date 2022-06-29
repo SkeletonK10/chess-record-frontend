@@ -5,7 +5,7 @@ import { text } from '../../../data'
 
 const Title = styled.div`
   width: 100%;
-  
+  margin-top: 3%;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -15,7 +15,7 @@ const Title = styled.div`
 
 const SubTitle = styled.div`
   width: 100%;
-  margin-top: 1%;
+  margin-top: 2%;
   
   display: flex;
   justify-content: center;
@@ -27,10 +27,10 @@ const Comp: React.FC = () => {
   return (
     <div>
       <Title>
-        {text.main.title}
+        {text.gameList.title}
       </Title>
       <SubTitle>
-        {text.main.subTitle}
+        {text.gameList.subTitle}
       </SubTitle>
     </div>
   );
