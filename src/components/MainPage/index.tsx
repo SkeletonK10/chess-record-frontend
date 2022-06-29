@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled'
 
 import Header from '../Header'
+import MainImage from '../MainImage'
 import Title from './Title'
 
 const DivMainPage = styled.div`
@@ -16,6 +17,7 @@ const MainPage: React.FC = () => {
   return (
     <DivMainPage>
       <Header />
+      <MainImage />
       <Title />
     </DivMainPage>
   );
