@@ -12,9 +12,9 @@ const Header = styled.div`
   align-items: center;
   
   font-size: 1.4rem;
-  color: ${palette.font};
+  color: ${palette.background};
   
-  background-color: ${palette.background};
+  background-color: ${palette.font};
 `;
 
 const Comp: React.FC = () => {

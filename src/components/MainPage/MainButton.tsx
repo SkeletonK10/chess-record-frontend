@@ -6,8 +6,8 @@ import { palette } from '../../data';
 const MainButton = styled.div`
   width: 30%;
   height: 10%;
-  margin-top: 4%;
-  border: 3px solid ${palette.font}};
+  margin-top: 3%;
+  border: 3px solid ${palette.font};
   border-radius: 50px;
   background-color: ${palette.background};
   
