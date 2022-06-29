@@ -1,17 +1,29 @@
 import React from 'react';
 import styled from '@emotion/styled'
 
-const MainButton = styled.button`
-  width: 100%;
-  height: 30%;
+const MainButton = styled.div`
+  width: 40%;
+  height: 10%;
   margin-top: 4%;
-  margin-bottom: 2%;
-  object-fit: contain;
+  border-radius: 50px;
+  background-color: #FFFFFF;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  font-size: 3rem;
 `;
 
-const Comp: React.FC = () => {
+interface ButtonProps {
+  text: string;
+}
+
+const Comp: React.FC<ButtonProps> = (props) => {
   return (
-    <MainButton />
+    <MainButton>
+      {props.text}
+    </MainButton>
   );
 }
 

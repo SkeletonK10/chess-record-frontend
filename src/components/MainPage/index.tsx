@@ -4,13 +4,16 @@ import styled from '@emotion/styled'
 import Header from '../Header'
 import MainImage from './MainImage'
 import Title from './Title'
+import MainButton from './MainButton'
 
 const MainPage = styled.div`
   width: 100%;
   height: 100%;
   position: absolute;
   
-  background-color: #ece6cc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const Comp: React.FC = () => {
@@ -19,6 +22,8 @@ const Comp: React.FC = () => {
       <Header />
       <MainImage />
       <Title />
+      <MainButton text="경기 기록 추가" />
+      <MainButton text="경기 기록 조회" />
     </MainPage>
   );
 }
