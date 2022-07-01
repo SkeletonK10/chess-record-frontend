@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import MainPage from './components/Page/MainPage';
-import GameList from './components/Page/GameList';
+import GameList from './components/Page/GamePage/GameList';
 import GameAdd from './components/Page/GameAdd';
 
 const App: React.FC = () => {

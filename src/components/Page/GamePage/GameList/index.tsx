@@ -1,8 +1,8 @@
 import React from 'react';
 
-import PageStyle from '../../PageStyle';
+import PageStyle from '../../../PageStyle';
 
-import Header from '../../Header'
+import Header from '../../../Header'
 import Title from './Title'
 
 const Comp: React.FC = () => {
