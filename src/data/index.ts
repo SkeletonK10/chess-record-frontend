@@ -13,7 +13,9 @@ export const text = {
   gameList: {
     title: '경기 기록 조회',
     subTitle: '기록된 경기 목록을 조회합니다.',
-  }
+  },
+  
+  backendURL: "No URL for backend server yet",
 };
 
 export const palette = {

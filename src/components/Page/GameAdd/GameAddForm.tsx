@@ -1,10 +1,11 @@
 import React from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
+import axios from 'axios';
 import styled from '@emotion/styled';
 
 import { text, palette } from "../../../data";
 
-type GameInfo = {
+interface IGameInfo {
   white: string;
   black: string;
   result: string;
@@ -74,8 +75,21 @@ const SubmitStyle = styled.input`
 `;
 
 const Comp: React.FC = () => {
-  const { register, handleSubmit } = useForm<GameInfo>();
-  const onSubmit: SubmitHandler<GameInfo> = data => console.log(data);
+  const { register, handleSubmit } = useForm<IGameInfo>();
+  const onSubmit: SubmitHandler<IGameInfo> = async (data: IGameInfo) => {
+    // API Call: POST backendURL/game/
+    const url: string = text.backendURL + "/game/";
+    try {
+      const response = await axios.post(url, data);
+      console.log("Data has been succesfully posted!");
+      console.log(response);
+    }
+    catch (err) {
+      console.error(err);
+      alert("결과 기록에 실패했습니다!\n콘솔의 에러 메시지를 확인해 주세요.");
+    }
+    console.log(data);
+  } 
   
   return (
     <FormStyle onSubmit={handleSubmit(onSubmit)}>
