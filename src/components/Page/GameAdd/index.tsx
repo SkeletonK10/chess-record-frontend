@@ -1,18 +1,15 @@
 import React from 'react';
 
-import PageStyle from '../../PageStyle';
-
-import Header from '../../Header'
+import Page from '../../Page';
 import Title from './Title'
 import GameAddForm from './GameAddForm';
 
 const Comp: React.FC = () => {
   return (
-    <PageStyle>
-      <Header />
+    <Page>
       <Title />
       <GameAddForm />
-    </PageStyle>
+    </Page>
   );
 }
 

@@ -1,5 +1,7 @@
+import React from 'react';
 import styled from '@emotion/styled';
 
+import Header from './Header';
 import { palette } from '../data';
 
 const PageStyle = styled.div`
@@ -15,4 +17,15 @@ const PageStyle = styled.div`
   align-items: center;
 `;
 
-export default PageStyle;
+type PageProps = { children: React.ReactNode };
+
+const Page: React.FC<PageProps> = ({ children }: PageProps) => {
+  return (
+    <PageStyle>
+      <Header />
+      {children}
+    </PageStyle>
+  );
+}
+
+export default Page;
