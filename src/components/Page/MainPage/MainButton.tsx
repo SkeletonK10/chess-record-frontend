@@ -12,6 +12,8 @@ const MainButton = styled.div`
   border-radius: 50px;
   background-color: ${palette.ivory};
   
+  cursor: pointer;
+  
   &:hover {
     background-color: ${palette.ivoryHover};
   }
