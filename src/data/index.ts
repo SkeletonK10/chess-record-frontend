@@ -20,7 +20,10 @@ export const text = {
 
 export const palette = {
   ivory: '#ece6cc',
-  wood: '#8c531b',
   ivoryHover: '#fff9dc',
   ivoryActive: '#c2bda4',
+  
+  wood: '#8c531b',
+  woodHover: '#bb6f24',
+  woodActive: '#704316',
 };

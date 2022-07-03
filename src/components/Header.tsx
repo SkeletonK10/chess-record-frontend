@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from '@emotion/styled'
 
 import { text, palette } from '../data'
@@ -11,16 +12,38 @@ const Header = styled.div`
   display: flex;
   align-items: center;
   
-  font-size: 1.4rem;
-  color: ${palette.ivory};
-  
   background-color: ${palette.wood};
 `;
 
+const HeaderTitle = styled.div`
+  height: 100%;
+  
+  cursor: pointer;
+  
+  &:hover {
+    background-color: ${palette.woodHover};
+  }
+  
+  &:active {
+    background-color:${palette.woodActive};
+  }
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  background-color: ${palette.wood};
+  color: ${palette.ivory};
+  font-size: 1.4rem;
+`;
+
 const Comp: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <Header>
+      <HeaderTitle onClick={() => navigate("/")}>
         {text.main.title}
+      </HeaderTitle>
     </Header>
   );
 }
