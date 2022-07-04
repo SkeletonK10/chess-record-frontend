@@ -3,40 +3,49 @@ import { useParams } from 'react-router-dom';
 
 import Page from '../../Page';
 import Title from './Title';
+import GameHeader from './GameHeader';
+import GameBody from './GameBody';
 
-interface BigGameView {
+export interface UserInfo {
+  id: number;
+  name: string;
+  rating: number;
+}
+
+export interface GameInfo {
   id: number;
   createdAt: Date;
-  white: string;
-  black: string;
+  white: UserInfo;
+  black: UserInfo;
   result: string;
   notation?: string;
 }
 
 const Comp: React.FC = () => {
   const { id } = useParams();
-  const rows: Array<BigGameView> = [
-    {
-      id: 6,
-      createdAt: new Date(2021, 11, 6),
-      white: "Magnus",
-      black: "Ian",
-      result: "백 승",
+  const row: GameInfo = {
+    id: 6,
+    createdAt: new Date(2021, 11, 6),
+    white: {
+      id: 1,
+      name: "이규호",
+      rating: 2864,
     },
-    
-    {
-      id: 7,
-      createdAt: new Date(2021, 11, 7),
-      white: "Ian",
-      black: "Magnus",
-      result: "무승부",
-      notation:
-      `1. e4 e5 1/2-1/2`,
-    }
-  ]
+    black: {
+      id: 2,
+      name: "이건우",
+      rating: 2792,
+    },
+    result: "백 승",
+    notation: 
+    `1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. 0-0 Be7 6. Re1 b5 7. Bb3 0-0 8. c3 d5 0-1`
+  };
   return (
     <Page>
-      <Title />
+      <Title id={Number(id)} />
+      <GameHeader white={row.white} black={row.black} result={row.result} />
+      <GameBody value={row} />
+      
     </Page>
   );
 }

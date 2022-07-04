@@ -3,6 +3,10 @@ import styled from '@emotion/styled'
 
 import { text } from '../../../data'
 
+interface TitleProps {
+  id?: number;
+}
+
 const Title = styled.div`
   width: 100%;
   margin-top: 3%;
@@ -23,14 +27,14 @@ const SubTitle = styled.div`
   font-size: 1.4rem;
 `;
 
-const Comp: React.FC = () => {
+const Comp: React.FC<TitleProps> = (props) => {
   return (
     <div>
       <Title>
-        {text.gameList.title}
+        {text.gameView(props.id).title}
       </Title>
       <SubTitle>
-        {text.gameList.subTitle}
+        {text.gameView(props.id).subTitle}
       </SubTitle>
     </div>
   );
