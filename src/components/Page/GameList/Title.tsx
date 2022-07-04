@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled'
 
-import { text } from '../../../../data'
+import { text } from '../../../data'
 
 const Title = styled.div`
   width: 100%;

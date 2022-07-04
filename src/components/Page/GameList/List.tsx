@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from '@emotion/styled';
 
-import { text, palette } from "../../../../data";
+import { text, palette } from "../../../data";
 
 interface SmallGameView {
   id: number;
