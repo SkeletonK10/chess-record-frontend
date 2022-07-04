@@ -11,6 +11,11 @@ export const text = {
     subTitle: 'KUAAA의 체스 경기에 대한 데이터를 저장합니다.',
   },
   
+  notFound: {
+    title: '404 Not Found',
+    subTitle: '존재하지 않는 페이지입니다.'
+  },
+  
   gameAdd: {
     title: '경기 기록 추가',
     subTitle: '새로운 경기를 데이터베이스에 추가합니다.',
