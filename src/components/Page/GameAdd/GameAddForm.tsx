@@ -26,7 +26,7 @@ const FormStyle = styled.form`
 `;
 
 const InputStyle = styled.input`
-  width: 40%;
+  width: 20%;
   height: 5%;
 
   margin-top: 1%;
@@ -38,7 +38,7 @@ const InputStyle = styled.input`
 `;
 
 const SelectStyle = styled.select`
-  width: 40%;
+  width: 20%;
   height: 5%;
 
   margin-top: 1%;
@@ -50,7 +50,7 @@ const SelectStyle = styled.select`
 `;
 
 const TextareaStyle = styled.textarea`
-  width: 60%;
+  width: 40%;
   height: 30%;
   resize: none;
 
@@ -63,8 +63,8 @@ const TextareaStyle = styled.textarea`
 `;
 
 const SubmitStyle = styled.input`
-  width: 20%;
-  height: 5%;
+  width: 10%;
+  height: 10%;
 
   margin-top: 1%;
   margin-bottom: 1%;
