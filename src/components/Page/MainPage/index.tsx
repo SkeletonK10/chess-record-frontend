@@ -5,7 +5,7 @@ import MainImage from './MainImage'
 import Title from './Title'
 import MainButton from './MainButton'
 
-import { text } from '../../../data';
+import { URL, text } from '../../../data';
 
 
 const Comp: React.FC = () => {
@@ -13,8 +13,8 @@ const Comp: React.FC = () => {
     <Page>
       <MainImage />
       <Title />
-      <MainButton text={text.gameAdd.title} path="/newgame/"/>
-      <MainButton text={text.gameList.title} path="/gamelist/"/>
+      <MainButton text={text.gameAdd.title} path={URL.gameAdd}/>
+      <MainButton text={text.gameList.title} path={URL.gameList}/>
     </Page>
   );
 }

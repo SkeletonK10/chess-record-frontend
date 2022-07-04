@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from '@emotion/styled';
 
-import { text, palette } from "../../../data";
+import { URL, text, palette } from "../../../data";
 
 interface SmallGameView {
   id: number;
@@ -79,7 +79,7 @@ const Comp: React.FC = () => {
         <TDStyle>{row.white}</TDStyle>
         <TDStyle>{row.black}</TDStyle>
         <TDStyle>{row.result}</TDStyle>
-        <TDStyle><LinkButton onClick={() => navigate(`/game/${row.id}`)}>링크</LinkButton></TDStyle>
+        <TDStyle><LinkButton onClick={() => navigate(`${URL.gameView}${row.id}`)}>링크</LinkButton></TDStyle>
       </tr>
     );
   });

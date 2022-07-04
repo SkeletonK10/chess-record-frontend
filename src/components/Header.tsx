@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from '@emotion/styled'
 
-import { text, palette } from '../data'
+import { URL, text, palette } from '../data'
 
 const Header = styled.div`
   width: 98%;
@@ -41,7 +41,7 @@ const Comp: React.FC = () => {
   const navigate = useNavigate();
   return (
     <Header>
-      <HeaderTitle onClick={() => navigate("/")}>
+      <HeaderTitle onClick={() => navigate(URL.main)}>
         {text.main.title}
       </HeaderTitle>
     </Header>

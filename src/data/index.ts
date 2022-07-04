@@ -1,3 +1,10 @@
+export const URL = {
+  main: "/",
+  gameAdd: "/newgame/",
+  gameList: "/gamelist/",
+  gameView: "/game/"
+}
+
 export const text = {
   main: {
     title: '체스 데이터 저장소',
