@@ -45,6 +45,14 @@ const LinkButton = styled.div`
   display: flex;
   justify-content: center;
   
+  &:hover {
+    background-color: ${palette.ivoryHover};
+  }
+  
+  &:active {
+    background-color:${palette.ivoryActive};
+  }
+  
   cursor: pointer;
 `;
 
@@ -53,11 +61,19 @@ const Comp: React.FC = () => {
   //const rows = 'GET backend/game/'
   const rows: Array<SmallGameView> = [
     {
+      id: 1,
+      createdAt: new Date(Date.now()),
+      white: "Test1",
+      black: "Test2",
+      result: "흑 승",
+    },
+    
+    {
       id: 6,
       createdAt: new Date(2021, 11, 6),
       white: "Carlsen",
       black: "Nepomniachtchi",
-      result: "1-0",
+      result: "백 승",
     },
     
     {
@@ -65,7 +81,7 @@ const Comp: React.FC = () => {
       createdAt: new Date(2021, 11, 7),
       white: "Nepomniachtchi",
       black: "Carlsen",
-      result: "1/2-1/2",
+      result: "무승부",
     }
   ]
   const isEmpty = !rows;
