@@ -8,7 +8,7 @@ import { URL, text, palette } from "../../../data";
 
 interface SmallGameView {
   id: number;
-  createdAt: Date;
+  createdAt: string;
   white: string;
   black: string;
   result: string;
