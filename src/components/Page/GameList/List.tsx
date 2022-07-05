@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from '@emotion/styled';
+import { MdReadMore } from 'react-icons/md';
 
 import { URL, text, palette } from "../../../data";
 
@@ -44,15 +45,6 @@ const TDStyle = styled.td`
 const LinkButton = styled.div`
   display: flex;
   justify-content: center;
-  
-  &:hover {
-    background-color: ${palette.ivoryHover};
-  }
-  
-  &:active {
-    background-color:${palette.ivoryActive};
-  }
-  
   cursor: pointer;
 `;
 
@@ -95,7 +87,7 @@ const Comp: React.FC = () => {
         <TDStyle>{row.white}</TDStyle>
         <TDStyle>{row.black}</TDStyle>
         <TDStyle>{row.result}</TDStyle>
-        <TDStyle><LinkButton onClick={() => navigate(`${URL.gameView}${row.id}`)}>링크</LinkButton></TDStyle>
+        <TDStyle><LinkButton onClick={() => navigate(`${URL.gameView}${row.id}`)}><MdReadMore /></LinkButton></TDStyle>
       </tr>
     );
   });
