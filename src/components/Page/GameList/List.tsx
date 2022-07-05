@@ -39,6 +39,8 @@ const THStyle = styled.th`
 `;
 
 const TDStyle = styled.td`
+  padding-left: 4px;
+  padding-right: 4px;
   border: 3px solid ${palette.wood};
 `;
 
