@@ -36,7 +36,7 @@ export const text = {
     noRecord: '기록된 경기 결과가 없습니다!',
   },
   
-  backendURL: "No URL for backend server yet",
+  backendURL: "localhost:8000",
 };
 
 export const palette = {
