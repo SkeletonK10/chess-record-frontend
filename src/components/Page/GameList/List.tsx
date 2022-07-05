@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import styled from '@emotion/styled';
 import { MdReadMore } from 'react-icons/md';
@@ -41,6 +42,9 @@ const THStyle = styled.th`
 const TDStyle = styled.td`
   padding-left: 4px;
   padding-right: 4px;
+  
+  text-align: center;
+  
   border: 3px solid ${palette.wood};
 `;
 
@@ -52,40 +56,46 @@ const LinkButton = styled.div`
 
 const Comp: React.FC = () => {
   const navigate = useNavigate();
-  //const rows = 'GET backend/game/'
-  const rows: Array<SmallGameView> = [
-    {
-      id: 1,
-      createdAt: new Date(Date.now()),
-      white: "Test1",
-      black: "Test2",
-      result: "흑 승",
-    },
-    
-    {
-      id: 6,
-      createdAt: new Date(2021, 11, 6),
-      white: "Carlsen",
-      black: "Nepomniachtchi",
-      result: "백 승",
-    },
-    
-    {
-      id: 7,
-      createdAt: new Date(2021, 11, 7),
-      white: "Nepomniachtchi",
-      black: "Carlsen",
-      result: "무승부",
-    }
-  ]
-  const isEmpty = !rows;
+  const [rows, setRows] = useState([]);
   
+  const getList = async () => {
+    const response = await axios.get(text.backendURL + '/game/');
+    setRows(response.data);
+  }
+  
+  useEffect(() => {
+    getList();
+  }, []);
+  // const rows: Array<SmallGameView> = [
+  //   {
+  //     id: 1,
+  //     createdAt: new Date(Date.now()),
+  //     white: "Test1",
+  //     black: "Test2",
+  //     result: "흑 승",
+  //   },
+    
+  //   {
+  //     id: 6,
+  //     createdAt: new Date(2021, 11, 6),
+  //     white: "Carlsen",
+  //     black: "Nepomniachtchi",
+  //     result: "백 승",
+  //   },
+    
+  //   {
+  //     id: 7,
+  //     createdAt: new Date(2021, 11, 7),
+  //     white: "Nepomniachtchi",
+  //     black: "Carlsen",
+  //     result: "무승부",
+  //   }
+  // ];
+  const isEmpty = !rows;
   const Comps = rows.map((row: SmallGameView) => {
-    const offset = new Date().getTimezoneOffset() * 60000;
-    const createdAt = new Date(row.createdAt.getTime() - offset);  
     return (
       <tr>
-        <TDStyle>{createdAt.toISOString().slice(0, 10)}</TDStyle>
+        <TDStyle>{row.createdAt}</TDStyle>
         <TDStyle>{row.white}</TDStyle>
         <TDStyle>{row.black}</TDStyle>
         <TDStyle>{row.result}</TDStyle>

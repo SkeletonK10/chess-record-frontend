@@ -20,7 +20,8 @@ export const text = {
     if (typeof id === "undefined") id = -1;
     return {
       title: `${id}번 경기`,
-      subTitle: `${id}번 경기에 대한 세부 정보입니다.`
+      subTitle: `${id}번 경기에 대한 세부 정보입니다.`,
+      noRecord: '기록된 경기 결과가 없습니다!',
     }
   },
   
@@ -36,7 +37,7 @@ export const text = {
     noRecord: '기록된 경기 결과가 없습니다!',
   },
   
-  backendURL: "localhost:8000",
+  backendURL: "http://localhost:8000",
 };
 
 export const palette = {
