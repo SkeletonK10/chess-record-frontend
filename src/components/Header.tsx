@@ -20,14 +20,6 @@ const HeaderTitle = styled.div`
   
   cursor: pointer;
   
-  &:hover {
-    background-color: ${palette.woodHover};
-  }
-  
-  &:active {
-    background-color:${palette.woodActive};
-  }
-  
   display: flex;
   justify-content: center;
   align-items: center;
