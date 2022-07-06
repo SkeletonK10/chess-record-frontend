@@ -28,7 +28,7 @@ export const text = {
   gameAdd: {
     title: '경기 기록 추가',
     subTitle: '새로운 경기를 데이터베이스에 추가합니다.',
-    notationSample: '1. e4 e5, 2. Nf3 Nf6 과 같은 식으로 적어주세요.',
+    notationSample: '1. e4 e5 2. Nf3 Nf6 과 같은 식으로 적어주세요.',
   },
   
   gameList: {
