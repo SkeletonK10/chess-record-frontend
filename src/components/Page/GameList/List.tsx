@@ -7,6 +7,10 @@ import { MdReadMore } from 'react-icons/md';
 import { URL, text, palette } from "../../../data";
 import { GameListEntry } from "../../../data/types";
 
+interface ListProps {
+  page?: string;
+}
+
 const ListDivStyle = styled.div`
   width: 100%;
   height: 70%;
@@ -47,18 +51,19 @@ const LinkButton = styled.div`
   cursor: pointer;
 `;
 
-const Comp: React.FC = () => {
+const Comp: React.FC<ListProps> = (props: ListProps) => {
   const navigate = useNavigate();
   const [rows, setRows] = useState([]);
   
+  const page: string = props.page || '1';
   const getList = async () => {
-    const response = await axios.get(text.backendURL + '/game/');
+    const response = await axios.get(`${text.backendURL}/game/${page}`);
     setRows(response.data);
   }
   
   useEffect(() => {
     getList();
-  }, []);
+  });
   // const rows: Array<GameListEntry> = [
   //   {
   //     id: 1,
