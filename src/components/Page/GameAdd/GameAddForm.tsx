@@ -75,12 +75,12 @@ const Comp: React.FC = () => {
     const url: string = text.backendURL + "/game/";
     try {
       const response = await axios.post(url, data);
-      console.log("Data has been succesfully posted!");
+      console.log(text.gameAdd.success);
       console.log(response);
     }
     catch (err) {
       console.error(err);
-      alert("결과 기록에 실패했습니다!\n콘솔의 에러 메시지를 확인해 주세요.");
+      alert(text.gameAdd.error);
     }
     console.log(data);
   } 
