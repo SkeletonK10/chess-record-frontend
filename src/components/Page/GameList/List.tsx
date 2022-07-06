@@ -56,13 +56,13 @@ const Comp: React.FC<ListProps> = (props: ListProps) => {
   const [rows, setRows] = useState([]);
   
   const page: string = props.page || '1';
-  const getList = async () => {
+  const loadList = async () => {
     const response = await axios.get(`${text.backendURL}/game/${page}`);
     setRows(response.data);
   }
   
   useEffect(() => {
-    getList();
+    loadList();
   });
   // const rows: Array<GameListEntry> = [
   //   {
