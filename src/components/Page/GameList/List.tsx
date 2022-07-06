@@ -5,14 +5,7 @@ import styled from '@emotion/styled';
 import { MdReadMore } from 'react-icons/md';
 
 import { URL, text, palette } from "../../../data";
-
-interface SmallGameView {
-  id: number;
-  createdAt: string;
-  white: string;
-  black: string;
-  result: string;
-};
+import { GameListEntry } from "../../../data/types";
 
 const ListDivStyle = styled.div`
   width: 100%;
@@ -66,7 +59,7 @@ const Comp: React.FC = () => {
   useEffect(() => {
     getList();
   }, []);
-  // const rows: Array<SmallGameView> = [
+  // const rows: Array<GameListEntry> = [
   //   {
   //     id: 1,
   //     createdAt: new Date(Date.now()),
@@ -92,7 +85,10 @@ const Comp: React.FC = () => {
   //   }
   // ];
   const isEmpty = !rows;
-  const Comps = rows.map((row: SmallGameView) => {
+  
+  const Comps = isEmpty ?
+  undefined :
+  rows.map((row: GameListEntry) => {
     return (
       <tr>
         <TDStyle>{row.createdAt}</TDStyle>

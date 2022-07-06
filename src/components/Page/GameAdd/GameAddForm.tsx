@@ -4,13 +4,7 @@ import axios from 'axios';
 import styled from '@emotion/styled';
 
 import { text, palette } from "../../../data";
-
-interface IGameInfo {
-  white: string;
-  black: string;
-  result: string;
-  notation?: string;
-};
+import { IGameInfo } from "../../../data/types";
 
 const FormStyle = styled.form`
   width: 100%;
@@ -25,17 +19,17 @@ const FormStyle = styled.form`
   font-size: 1.5rem;
 `;
 
-const InputStyle = styled.input`
-  width: 20%;
-  height: 5%;
+// const InputStyle = styled.input`
+//   width: 20%;
+//   height: 5%;
 
-  margin-top: 1%;
-  margin-bottom: 1%;
+//   margin-top: 1%;
+//   margin-bottom: 1%;
   
-  border: 3px solid ${palette.wood};
-  outline: 0;
-  font-size: 1.2rem;
-`;
+//   border: 3px solid ${palette.wood};
+//   outline: 0;
+//   font-size: 1.2rem;
+// `;
 
 const SelectStyle = styled.select`
   width: 20%;
@@ -94,10 +88,10 @@ const Comp: React.FC = () => {
   return (
     <FormStyle onSubmit={handleSubmit(onSubmit)}>
       <b>백 선수</b>
-      <InputStyle {...register("white")} />
+      <SelectStyle {...register("white")} />
       
       <b>흑 선수</b>
-      <InputStyle {...register("black")} />
+      <SelectStyle {...register("black")} />
       
       <b>결과</b>
       <SelectStyle {...register("result")} defaultValue="-1">
