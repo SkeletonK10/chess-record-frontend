@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import MainPage from './components/Page/MainPage';
 import NotFound from './components/Page/NotFound';
 import GameView from './components/Page/GameView';
-import GameList from './components/Page/GameList';
+import GameListRouter from './components/Page/GameList/Router';
 import GameAdd from './components/Page/GameAdd';
 
 const App: React.FC = () => {
@@ -14,7 +14,7 @@ const App: React.FC = () => {
         <Route path="/" element={<MainPage />} />
         <Route path="*" element={<NotFound />} />
         <Route path="/game/:id/" element={<GameView />} />
-        <Route path="/gamelist/" element={<GameList />} />
+        <Route path="/gamelist/" element={<GameListRouter />} />
         <Route path="/newgame/" element={<GameAdd />} />
       </Routes>
     </Router>
