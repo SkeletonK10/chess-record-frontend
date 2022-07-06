@@ -108,14 +108,18 @@ const Comp: React.FC = () => {
     <ListDivStyle>
       {isEmpty ? (text.gameList.noRecord) : (
         <TableStyle>
-          <tr>
-            <THStyle>기록 일자</THStyle>
-            <THStyle>백 선수</THStyle>
-            <THStyle>흑 선수</THStyle>
-            <THStyle>결과</THStyle>
-            <THStyle>상세</THStyle>
-          </tr>
-          {Comps}
+          <thead>
+            <tr>
+              <THStyle>기록 일자</THStyle>
+              <THStyle>백 선수</THStyle>
+              <THStyle>흑 선수</THStyle>
+              <THStyle>결과</THStyle>
+              <THStyle>상세</THStyle>
+            </tr>
+          </thead>
+          <tbody>
+            {Comps}
+          </tbody>
         </TableStyle>
       )}
     </ListDivStyle>
