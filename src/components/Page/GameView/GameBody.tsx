@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-import { GameInfo } from '.';
 import { palette } from '../../../data';
+import { GameInfo } from '../../../data/types';
 
 interface GameBodyProps {
   value: GameInfo;

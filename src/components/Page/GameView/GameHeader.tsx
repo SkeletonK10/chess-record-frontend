@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-import { UserInfo } from '.';
 import { palette } from '../../../data';
+import { UserInfo } from '../../../data/types';
 
 interface GameHeaderProps {
   white: UserInfo;

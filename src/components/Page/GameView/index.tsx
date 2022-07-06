@@ -9,21 +9,7 @@ import GameHeader from './GameHeader';
 import GameBody from './GameBody';
 
 import { text } from '../../../data';
-
-export interface UserInfo {
-  id: number;
-  name: string;
-  rating: number;
-}
-
-export interface GameInfo {
-  id: number;
-  createdAt: string;
-  white: UserInfo;
-  black: UserInfo;
-  result: string;
-  notation?: string;
-}
+import { GameInfo } from '../../../data/types';
 
 const NoResultStyle = styled.div`
   margin-top: 5%;
