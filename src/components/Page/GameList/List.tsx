@@ -57,7 +57,7 @@ const Comp: React.FC<ListProps> = (props: ListProps) => {
   
   const page: string = props.page || '1';
   const loadList = async () => {
-    const response = await axios.get(`${text.backendURL}/game/${page}`);
+    const response = await axios.get(`${text.backendURL}/gamelist/${page}`);
     setRows(response.data);
   }
   
@@ -96,7 +96,7 @@ const Comp: React.FC<ListProps> = (props: ListProps) => {
   rows.map((row: GameListEntry) => {
     return (
       <tr>
-        <TDStyle>{row.createdAt}</TDStyle>
+        <TDStyle>{row.createdat}</TDStyle>
         <TDStyle>{row.white}</TDStyle>
         <TDStyle>{row.black}</TDStyle>
         <TDStyle>{row.result}</TDStyle>

@@ -1,7 +1,7 @@
 // Used in gamelist
 export interface GameListEntry {
   id: number;
-  createdAt: string;
+  createdat: string;
   white: string;
   black: string;
   result: string;
@@ -17,8 +17,8 @@ export interface UserInfo {
 // Used in gameview
 export interface GameInfo {
   id: number;
-  createdAt: string;
-  playedAt: string;
+  createdat: string;
+  playedat: string;
   white: UserInfo;
   black: UserInfo;
   result: string;
@@ -28,7 +28,7 @@ export interface GameInfo {
 
 // Used in newgame form
 export interface IGameInfo {
-  playedAt?: string;
+  playedat?: string;
   white: string;
   black: string;
   result: string;
