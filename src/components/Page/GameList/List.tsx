@@ -93,9 +93,9 @@ const Comp: React.FC<ListProps> = (props: ListProps) => {
   
   const Comps = isEmpty ?
   undefined :
-  rows.map((row: GameListEntry) => {
+  rows.map((row: GameListEntry, index: number) => {
     return (
-      <tr>
+      <tr key={index}>
         <TDStyle>{row.createdat}</TDStyle>
         <TDStyle>{row.white}</TDStyle>
         <TDStyle>{row.black}</TDStyle>

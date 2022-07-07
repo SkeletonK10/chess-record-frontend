@@ -78,9 +78,11 @@ const Comp: React.FC = () => {
   
   const PlayerOptions = !playerList ?
   undefined :
-  playerList.map((player: UserInfo) => {
+  playerList.map((player: UserInfo, index: number) => {
     return (
-      <option value={player.id}>{`${player.name} (${player.rating})`}</option>
+      <option key={index} value={player.id}>
+        {`${player.name} (${player.rating})`}
+      </option>
     );
   });
   
