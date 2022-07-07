@@ -22,6 +22,7 @@ export interface GameInfo {
   black: UserInfo;
   result: string;
   notation?: string;
+  description?: string;
 };
 
 // Used in newgame form
@@ -30,4 +31,5 @@ export interface IGameInfo {
   black: string;
   result: string;
   notation?: string;
+  description?: string;
 };
