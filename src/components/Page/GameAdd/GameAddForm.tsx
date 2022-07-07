@@ -120,9 +120,10 @@ const Comp: React.FC = () => {
       <b>결과</b>
       <SelectStyle {...register("result")} defaultValue="-1">
         <option value="-1">선택하지 않음</option>
-        <option value="1-0">백 승</option>
-        <option value="1/2-1/2">무승부</option>
-        <option value="0-1">흑 승</option>
+        <option value="백 승">백 승</option>
+        <option value="무승부">무승부</option>
+        <option value="흑 승">흑 승</option>
+        <option value="중단됨">중단됨</option>
       </SelectStyle>
       
       <b>기보(선택)</b>
