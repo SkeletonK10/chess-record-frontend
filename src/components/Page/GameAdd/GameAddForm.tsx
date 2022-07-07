@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import axios from 'axios';
 import styled from '@emotion/styled';
 
 import { text, palette } from "../../../data";
-import { IGameInfo } from "../../../data/types";
+import { UserInfo, IGameInfo } from "../../../data/types";
 
 const FormStyle = styled.form`
   width: 100%;
@@ -69,12 +69,26 @@ const SubmitStyle = styled.input`
 `;
 
 const Comp: React.FC = () => {
+  const [playerList, setPlayerList] = useState([]);
+  
+  const loadPlayerList = async () => {
+    const response = await axios.get(`${text.backendURL}/player/`);
+    setPlayerList(response.data);
+  }
+  
+  const PlayerOptions = !playerList ?
+  undefined :
+  playerList.map((player: UserInfo) => {
+    return (
+      <option value={player.id}>{`${player.name} (${player.rating})`}</option>
+    );
+  });
+  
   const { register, handleSubmit } = useForm<IGameInfo>();
   const onSubmit: SubmitHandler<IGameInfo> = async (data: IGameInfo) => {
     // API Call: POST backendURL/game/
-    const url: string = text.backendURL + "/game/";
     try {
-      const response = await axios.post(url, data);
+      const response = await axios.post(`${text.backendURL}/player/`, data);
       console.log(text.gameAdd.success);
       console.log(response);
     }
@@ -83,15 +97,25 @@ const Comp: React.FC = () => {
       alert(text.gameAdd.error);
     }
     console.log(data);
-  } 
+  };
+  
+  useEffect(() => {
+    loadPlayerList();
+  });
   
   return (
     <FormStyle onSubmit={handleSubmit(onSubmit)}>
       <b>백 선수</b>
-      <SelectStyle {...register("white")} />
+      <SelectStyle {...register("white")} defaultValue="-1">
+        <option value='-1'>선택하지 않음</option>
+        {PlayerOptions}
+      </SelectStyle>
       
       <b>흑 선수</b>
-      <SelectStyle {...register("black")} />
+      <SelectStyle {...register("black")} defaultValue="-1">
+        <option value='-1'>선택하지 않음</option>
+        {PlayerOptions}
+      </SelectStyle>
       
       <b>결과</b>
       <SelectStyle {...register("result")} defaultValue="-1">
