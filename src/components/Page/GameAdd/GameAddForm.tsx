@@ -72,7 +72,7 @@ const Comp: React.FC = () => {
   const [playerList, setPlayerList] = useState([]);
   
   const loadPlayerList = async () => {
-    const response = await axios.get(`${text.backendURL}/player/`);
+    const response = await axios.get(`${text.backendURL}/playerlist/`);
     setPlayerList(response.data);
   }
   
@@ -88,7 +88,7 @@ const Comp: React.FC = () => {
   const onSubmit: SubmitHandler<IGameInfo> = async (data: IGameInfo) => {
     // API Call: POST backendURL/game/
     try {
-      const response = await axios.post(`${text.backendURL}/player/`, data);
+      const response = await axios.post(`${text.backendURL}/game/`, data);
       console.log(text.gameAdd.success);
       console.log(response);
     }
