@@ -18,6 +18,7 @@ export interface UserInfo {
 export interface GameInfo {
   id: number;
   createdAt: string;
+  playedAt: string;
   white: UserInfo;
   black: UserInfo;
   result: string;
@@ -27,6 +28,7 @@ export interface GameInfo {
 
 // Used in newgame form
 export interface IGameInfo {
+  playedAt?: string;
   white: string;
   black: string;
   result: string;
