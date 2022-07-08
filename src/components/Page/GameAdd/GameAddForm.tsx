@@ -91,8 +91,9 @@ const Comp: React.FC = () => {
     // API Call: POST backendURL/game/
     try {
       const response = await axios.post(`${text.backendURL}/game/`, data);
-      console.log(text.gameAdd.success);
+      alert(text.gameAdd.success);
       console.log(response);
+      window.location.reload()
     }
     catch (err) {
       console.error(err);
