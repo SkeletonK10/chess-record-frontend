@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled'
 
 const MainImage = styled.img`
-  width: 100%;
+  width: 80%;
   height: 30%;
   margin-top: 4%;
   margin-bottom: 2%;

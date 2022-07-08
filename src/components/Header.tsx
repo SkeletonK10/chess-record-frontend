@@ -5,9 +5,8 @@ import styled from '@emotion/styled'
 import { URL, text, palette } from '../data'
 
 const Header = styled.div`
-  width: 98%;
-  height: 5%;
-  padding-left: 2%;
+  width: 100vw;
+  height: 50px;
   
   display: flex;
   align-items: center;
@@ -17,6 +16,7 @@ const Header = styled.div`
 
 const HeaderTitle = styled.div`
   height: 100%;
+  transform: translate(20px, 0px);
   
   cursor: pointer;
   
@@ -26,7 +26,7 @@ const HeaderTitle = styled.div`
   
   background-color: ${palette.wood};
   color: ${palette.ivory};
-  font-size: 1.4rem;
+  font-size: 1.3rem;
 `;
 
 const Comp: React.FC = () => {

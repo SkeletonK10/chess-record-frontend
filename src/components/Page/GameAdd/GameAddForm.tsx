@@ -8,7 +8,6 @@ import { UserInfo, IGameInfo } from "../../../data/types";
 
 const FormStyle = styled.form`
   width: 100%;
-  height: 70%;
   
   margin-top: 2%;
   
@@ -20,8 +19,7 @@ const FormStyle = styled.form`
 `;
 
 // const InputStyle = styled.input`
-//   width: 20%;
-//   height: 5%;
+//   width: 70%;
 
 //   margin-top: 1%;
 //   margin-bottom: 1%;
@@ -32,7 +30,7 @@ const FormStyle = styled.form`
 // `;
 
 const SelectStyle = styled.select`
-  width: 20%;
+  width: 70%;
   height: 5%;
 
   margin-top: 1%;
@@ -44,7 +42,7 @@ const SelectStyle = styled.select`
 `;
 
 const TextareaStyle = styled.textarea`
-  width: 40%;
+  width: 90%;
   height: 30%;
   resize: none;
 
@@ -57,7 +55,7 @@ const TextareaStyle = styled.textarea`
 `;
 
 const SubmitStyle = styled.input`
-  width: 10%;
+  width: 35%;
   height: 10%;
 
   margin-top: 1%;

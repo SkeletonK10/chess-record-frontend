@@ -8,7 +8,7 @@ export const URL = {
 export const text = {
   main: {
     title: '체스 데이터 저장소',
-    subTitle: 'KUAAA의 체스 경기에 대한 데이터를 저장합니다.',
+    subTitle: 'KUAAA의 체스 경기 데이터를 저장합니다.',
   },
   
   notFound: {
@@ -28,7 +28,7 @@ export const text = {
   gameAdd: {
     title: '경기 기록 추가',
     subTitle: '새로운 경기를 데이터베이스에 추가합니다.',
-    notationSample: '1. e4 e5 2. Nf3 Nf6 과 같은 식으로 적어주세요.',
+    notationSample: '예시) 1. e4 e5 2. Nf3 Nf6 ... 8. c3 d5 0-1',
     success: '기록에 성공하였습니다!',
     error: '결과 기록에 실패했습니다!\n콘솔의 에러 메시지를 확인해 주세요.',
   },

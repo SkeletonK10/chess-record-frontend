@@ -13,7 +13,6 @@ interface ListProps {
 
 const ListDivStyle = styled.div`
   width: 100%;
-  height: 70%;
   
   margin-top: 2%;
   
@@ -21,11 +20,11 @@ const ListDivStyle = styled.div`
   flex-direction: column;
   align-items: center;
   
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 `;
 
 const TableStyle = styled.table`
-  width: 40%;
+  width: 95%;
   
   border: 3px solid ${palette.wood};
   border-collapse: collapse;

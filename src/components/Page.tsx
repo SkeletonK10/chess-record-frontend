@@ -2,15 +2,9 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 import Header from './Header';
-import { palette } from '../data';
 
 const PageStyle = styled.div`
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  
-  color: ${palette.wood};
-  background-color: ${palette.ivory};
+  width: 375px;
   
   display: flex;
   flex-direction: column;

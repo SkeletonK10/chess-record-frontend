@@ -16,16 +16,17 @@ interface ProfileProps {
 }
 
 const GameHeaderStyle = styled.div`
-  width: 50%;
+  width: 90%;
   height: 10%;
   margin-top: 2%;
   display: flex;
   flex-direction: row;
+  justify-content: center;
   align-items: center;
 `;
 
 const ProfileStyle = styled.div`
-  width: 40%;
+  width: 30%;
   height: 100%;
   
   border-left: 2px solid ${palette.wood};
@@ -43,7 +44,6 @@ const ResultStyle = styled.div`
   height: 100%;
   
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   

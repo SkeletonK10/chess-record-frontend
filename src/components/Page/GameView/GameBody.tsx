@@ -23,7 +23,7 @@ const TableStyle = styled.table`
 `;
 
 const NotationStyle = styled.textarea`
-  width: 50%;
+  width: 90%;
   resize: none;
 
   margin-top: 1%;
