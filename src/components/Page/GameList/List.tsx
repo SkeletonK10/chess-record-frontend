@@ -50,6 +50,12 @@ const LinkButton = styled.div`
   cursor: pointer;
 `;
 
+const SubStyle = styled.div`
+  vertical-align: -0.5em;
+  font-size: 0.5em;
+  
+`
+
 const Comp: React.FC<ListProps> = (props: ListProps) => {
   const navigate = useNavigate();
   const [rows, setRows] = useState([]);
@@ -99,7 +105,11 @@ const Comp: React.FC<ListProps> = (props: ListProps) => {
         <TDStyle>{row.white}</TDStyle>
         <TDStyle>{row.black}</TDStyle>
         <TDStyle>{row.result}</TDStyle>
-        <TDStyle><LinkButton onClick={() => navigate(`${URL.gameView}${row.id}`)}><MdReadMore /></LinkButton></TDStyle>
+        <TDStyle>
+          <LinkButton onClick={() => navigate(`${URL.gameView}${row.id}`)}>
+            <MdReadMore /><SubStyle>{row.id}</SubStyle>
+          </LinkButton>
+        </TDStyle>
       </tr>
     );
   });
