@@ -8,6 +8,7 @@ export interface GameListEntry {
 };
 
 // Used in gameview and GameInfo(below)
+// Used in profile view
 export interface UserInfo {
   id: number;
   name: string;
@@ -35,3 +36,9 @@ export interface IGameInfo {
   notation?: string;
   description?: string;
 };
+
+// Used in newuser form
+export interface IUserInfo {
+  name: string;
+  userid: string;
+}
