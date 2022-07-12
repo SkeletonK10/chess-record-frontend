@@ -18,16 +18,16 @@ const FormStyle = styled.form`
   font-size: 1.5rem;
 `;
 
-// const InputStyle = styled.input`
-//   width: 70%;
+const InputStyle = styled.input`
+  width: 40%;
 
-//   margin-top: 1%;
-//   margin-bottom: 1%;
+  margin-top: 1%;
+  margin-bottom: 1%;
   
-//   border: 3px solid ${palette.wood};
-//   outline: 0;
-//   font-size: 1.2rem;
-// `;
+  border: 3px solid ${palette.wood};
+  outline: 0;
+  font-size: 1.2rem;
+`;
 
 const SelectStyle = styled.select`
   width: 70%;
@@ -72,7 +72,7 @@ const Comp: React.FC = () => {
   const loadPlayerList = async () => {
     const response = await axios.get(`${text.backendURL}/playerlist/`);
     setPlayerList(response.data);
-  }
+  };
   
   const PlayerOptions = !playerList ?
   undefined :
@@ -106,6 +106,11 @@ const Comp: React.FC = () => {
   
   return (
     <FormStyle onSubmit={handleSubmit(onSubmit)}>
+      <b>경기 일자</b>
+      <InputStyle
+        type="date"
+        {...register("playedat")} />
+      
       <b>백 선수</b>
       <SelectStyle {...register("white")} defaultValue="-1">
         <option value='-1'>선택하지 않음</option>
