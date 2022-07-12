@@ -6,6 +6,7 @@ import NotFound from './components/Page/NotFound';
 import GameView from './components/Page/GameView';
 import GameListRouter from './components/Page/GameList/Router';
 import GameAdd from './components/Page/GameAdd';
+import UserAdd from './components/Page/UserAdd';
 
 const App: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const App: React.FC = () => {
         <Route path="/game/:id/" element={<GameView />} />
         <Route path="/gamelist/*" element={<GameListRouter />} />
         <Route path="/newgame/" element={<GameAdd />} />
+        <Route path="/newuser/" element={<UserAdd />} />
       </Routes>
     </Router>
     

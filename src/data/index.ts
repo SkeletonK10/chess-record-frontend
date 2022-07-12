@@ -39,6 +39,11 @@ export const text = {
     noRecord: '기록된 경기 결과가 없습니다!',
   },
   
+  userAdd: {
+    title: '유저 등록',
+    subTitle: '새로운 유저를 데이터베이스에 등록합니다.',
+  },
+  
   backendURL: "http://localhost:8000",
 };
 
