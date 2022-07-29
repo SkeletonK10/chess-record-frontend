@@ -32,6 +32,7 @@ export interface IGameInfo {
   playedat?: string;
   white: string;
   black: string;
+  startpos: string;
   result: string;
   notation?: string;
   description?: string;
