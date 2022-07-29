@@ -2,17 +2,17 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 import { palette } from '../../../data';
-import { UserInfo } from '../../../data/types';
+import { PlayerInfo } from '../../../data/types';
 
 interface GameHeaderProps {
-  white: UserInfo;
-  black: UserInfo;
+  white: PlayerInfo;
+  black: PlayerInfo;
   result: string;
 };
 
 interface ProfileProps {
   side: string;
-  value: UserInfo;
+  value: PlayerInfo;
 }
 
 const GameHeaderStyle = styled.div`

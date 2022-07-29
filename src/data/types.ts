@@ -9,7 +9,7 @@ export interface GameListEntry {
 
 // Used in gameview and GameInfo(below)
 // Used in profile view
-export interface UserInfo {
+export interface PlayerInfo {
   id: number;
   name: string;
   rating: number;
@@ -20,8 +20,8 @@ export interface GameInfo {
   id: number;
   createdat: string;
   playedat: string;
-  white: UserInfo;
-  black: UserInfo;
+  white: PlayerInfo;
+  black: PlayerInfo;
   result: string;
   notation?: string;
   description?: string;
@@ -39,7 +39,7 @@ export interface IGameInfo {
 };
 
 // Used in newuser form
-export interface IUserInfo {
+export interface IPlayerInfo {
   name: string;
   userid: string;
 }

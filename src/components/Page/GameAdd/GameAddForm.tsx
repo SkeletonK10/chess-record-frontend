@@ -4,7 +4,7 @@ import axios from 'axios';
 import styled from '@emotion/styled';
 
 import { text, palette, penaltyFEN } from "../../../data";
-import { UserInfo, IGameInfo } from "../../../data/types";
+import { PlayerInfo, IGameInfo } from "../../../data/types";
 
 const FormStyle = styled.form`
   width: 100%;
@@ -85,7 +85,7 @@ const Comp: React.FC = () => {
   };
   const PlayerOptions = !playerList ?
     undefined :
-    playerList.map((player: UserInfo, index: number) => {
+    playerList.map((player: PlayerInfo, index: number) => {
       return (
         <option key={index} value={player.id}>
           {`${player.name} (${player.rating})`}

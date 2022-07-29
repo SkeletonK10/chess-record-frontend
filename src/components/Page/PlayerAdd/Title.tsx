@@ -27,10 +27,10 @@ const Comp: React.FC = () => {
   return (
     <div>
       <Title>
-        {text.userAdd.title}
+        {text.playerAdd.title}
       </Title>
       <SubTitle>
-        {text.userAdd.subTitle}
+        {text.playerAdd.subTitle}
       </SubTitle>
     </div>
   );

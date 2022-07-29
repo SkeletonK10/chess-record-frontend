@@ -15,6 +15,8 @@ const Comp: React.FC = () => {
       <Title />
       <MainButton text={text.gameAdd.title} path={URL.gameAdd}/>
       <MainButton text={text.gameList.title} path={URL.gameList}/>
+      <MainButton text={text.playerAdd.title} path={URL.playerAdd}/>
+      <MainButton text={text.playerList.title} path={URL.playerList}/>
     </Page>
   );
 }

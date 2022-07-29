@@ -4,7 +4,7 @@ import axios from 'axios';
 import styled from '@emotion/styled';
 
 import { text, palette } from "../../../data";
-import { IUserInfo } from "../../../data/types";
+import { IPlayerInfo } from "../../../data/types";
 
 const FormStyle = styled.form`
   width: 100%;
@@ -42,8 +42,8 @@ const SubmitStyle = styled.input`
 `;
 
 const Comp: React.FC = () => {
-  const { register, handleSubmit } = useForm<IUserInfo>();
-  const onSubmit: SubmitHandler<IUserInfo> = async (data: IUserInfo) => {
+  const { register, handleSubmit } = useForm<IPlayerInfo>();
+  const onSubmit: SubmitHandler<IPlayerInfo> = async (data: IPlayerInfo) => {
     // API Call: POST backendURL/user/
     try {
       const response = await axios.post(`${text.backendURL}/user/`, data);

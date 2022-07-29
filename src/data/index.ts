@@ -2,7 +2,9 @@ export const URL = {
   main: "/",
   gameAdd: "/newgame/",
   gameList: "/gamelist/",
-  gameView: "/game/"
+  gameView: "/game/",
+  playerAdd: "/newplayer/",
+  playerList: "/playerlist/",
 }
 
 export const text = {
@@ -39,9 +41,14 @@ export const text = {
     noRecord: '기록된 경기 결과가 없습니다!',
   },
   
-  userAdd: {
-    title: '유저 등록',
+  playerAdd: {
+    title: '플레이어 등록',
     subTitle: '새로운 유저를 데이터베이스에 등록합니다.',
+  },
+  
+  playerList: {
+    title: '플레이어 조회',
+    subTitle: '준비 중입니다!',
   },
   
   backendURL: "http://localhost:8000",

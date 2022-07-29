@@ -2,13 +2,13 @@ import React from 'react';
 
 import Page from '../../Page';
 import Title from './Title';
-import UserAddForm from './UserAddForm';
+import PlayerAddForm from './PlayerAddForm';
 
 const Comp: React.FC = () => {
   return (
     <Page>
       <Title />
-      <UserAddForm />
+      <PlayerAddForm />
     </Page>
   );
 }
