@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Controller, SubmitHandler, useForm } from 'react-hook-form';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import axios from 'axios';
 import styled from '@emotion/styled';
 
@@ -96,17 +96,16 @@ const Comp: React.FC = () => {
   const { register, handleSubmit, setValue } = useForm<IGameInfo>();
   const onSubmit: SubmitHandler<IGameInfo> = async (data: IGameInfo) => {
     // API Call: POST backendURL/game/
-    try {
-      const response = await axios.post(`${text.backendURL}/game/`, data);
-      alert(text.gameAdd.success);
-      console.log(response);
-      window.location.reload()
+
+    const response = await axios.post(`${text.backendURL}/game/`, data);
+    if (response.data.code) {
+      alert(response.data.msg);
+      console.log(data);
+      return;
     }
-    catch (err) {
-      console.error(err);
-      alert(text.gameAdd.error);
-    }
-    console.log(data);
+    alert(text.gameAdd.success);
+    console.log(response);
+    window.location.reload()
   };
   
   useEffect(() => {
