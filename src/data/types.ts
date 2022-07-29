@@ -33,6 +33,8 @@ export interface IGameInfo {
   white: string;
   black: string;
   startpos: string;
+  originaltime: number;
+  incrementtime: number;
   result: string;
   notation?: string;
   description?: string;

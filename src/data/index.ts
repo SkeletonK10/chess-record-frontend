@@ -30,6 +30,7 @@ export const text = {
   gameAdd: {
     title: '경기 기록 추가',
     subTitle: '새로운 경기를 데이터베이스에 추가합니다.',
+    timeDescription: '시간 제한 없이 경기한 경우 0+0으로 적어주세요.',
     notationSample: '예시) 1. e4 e5 2. Nf3 Nf6 ... 8. c3 d5 0-1',
     descriptionSample: '간단한 설명 등을 적어주세요!',
     success: '기록에 성공하였습니다!',

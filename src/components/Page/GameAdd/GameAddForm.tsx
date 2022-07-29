@@ -61,6 +61,22 @@ const RadioStyle = styled.div`
   font-size: 1.2rem;
 `;
 
+const TimeControlStyle = styled.div`
+  margin-top: 1.5%;
+  margin-bottom: 1.5%;
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1.2rem;
+`;
+
+const TimeDescriptionStyle = styled.div`
+  font-size: 0.9rem;
+`;
+
 const SubmitStyle = styled.input`
   width: 35%;
   height: 10%;
@@ -96,16 +112,20 @@ const Comp: React.FC = () => {
   const { register, handleSubmit, setValue } = useForm<IGameInfo>();
   const onSubmit: SubmitHandler<IGameInfo> = async (data: IGameInfo) => {
     // API Call: POST backendURL/game/
-
-    const response = await axios.post(`${text.backendURL}/game/`, data);
-    if (response.data.code) {
-      alert(response.data.msg);
+    try {
+      const response = await axios.post(`${text.backendURL}/game/`, data);
+      if (response.data.code) {
+        alert(response.data.msg);
+      }
+      else {
+        alert(text.gameAdd.success);
+        window.location.reload();
+      }
+    } catch (err) {
+      alert(text.gameAdd.error);
+    } finally {
       console.log(data);
-      return;
     }
-    alert(text.gameAdd.success);
-    console.log(response);
-    window.location.reload();
   };
   
   useEffect(() => {
@@ -134,7 +154,7 @@ const Comp: React.FC = () => {
       
       <b>페널티</b>
       <RadioStyle onChange={(e) => { setValue("startpos", penaltyFEN.normal) }}>
-        <input type="radio" name="startpos" value="0" onChange={(e) => { setPenalty(e.target.value) }} defaultChecked={true} />기본
+        <input type="radio" name="startpos" value="0" onChange={(e) => { setPenalty(e.target.value) }} defaultChecked={true} />없음
         <input type="radio" name="startpos" value="1" onChange={(e) => { setPenalty(e.target.value) }} />백에게 페널티
         <input type="radio" name="startpos" value="-1" onChange={(e) => { setPenalty(e.target.value) }} />흑에게 페널티
       </RadioStyle>
@@ -158,6 +178,24 @@ const Comp: React.FC = () => {
           <option value={penaltyBlack.hRook}>h열 룩 없이 (-500)</option>
           <option value={penaltyBlack.queen}>퀸 없이 (-900)</option>
         </SelectStyle>}
+      
+      <b>시간</b>
+      <TimeDescriptionStyle>{text.gameAdd.timeDescription}</TimeDescriptionStyle>
+      <TimeControlStyle>
+        <InputStyle
+          type='text'
+          inputMode='numeric'
+          placeholder='분 단위'
+          {...register("originaltime")}
+        />
+        +
+        <InputStyle
+          type='text'
+          inputMode='numeric'
+          placeholder='초 단위'
+          {...register("incrementtime")}
+        />
+      </TimeControlStyle>
       
       <b>결과</b>
       <SelectStyle {...register("result")} defaultValue="-1">
