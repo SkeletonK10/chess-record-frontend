@@ -105,7 +105,7 @@ const Comp: React.FC = () => {
     }
     alert(text.gameAdd.success);
     console.log(response);
-    window.location.reload()
+    window.location.reload();
   };
   
   useEffect(() => {
