@@ -21,8 +21,8 @@ const FormStyle = styled.form`
 const InputStyle = styled.input`
   width: 40%;
 
-  margin-top: 1%;
-  margin-bottom: 1%;
+  margin-top: 1.5%;
+  margin-bottom: 1.5%;
   
   border: 3px solid ${palette.wood};
   outline: 0;
@@ -33,8 +33,8 @@ const SelectStyle = styled.select`
   width: 70%;
   height: 5%;
 
-  margin-top: 1%;
-  margin-bottom: 1%;
+  margin-top: 1.5%;
+  margin-bottom: 1.5%;
 
   border: 3px solid ${palette.wood};
   outline: 0;
@@ -43,11 +43,11 @@ const SelectStyle = styled.select`
 
 const TextareaStyle = styled.textarea`
   width: 90%;
-  height: 30%;
+  height: 100px;
   resize: none;
 
-  margin-top: 1%;
-  margin-bottom: 1%;
+  margin-top: 1.5%;
+  margin-bottom: 1.5%;
 
   border: 3px solid ${palette.wood};
   outline: 0;
@@ -55,8 +55,8 @@ const TextareaStyle = styled.textarea`
 `;
 
 const RadioStyle = styled.div`
-  margin-top: 1%;
-  margin-bottom: 1%;
+  margin-top: 1.5%;
+  margin-bottom: 1.5%;
 
   font-size: 1.2rem;
 `;
@@ -65,8 +65,8 @@ const SubmitStyle = styled.input`
   width: 35%;
   height: 10%;
 
-  margin-top: 1%;
-  margin-bottom: 1%;
+  margin-top: 1.5%;
+  margin-bottom: 1.5%;
 
   border: 3px solid ${palette.wood};
   outline: 0;
@@ -171,6 +171,11 @@ const Comp: React.FC = () => {
       <b>기보(선택)</b>
       <TextareaStyle {...register("notation")}
         placeholder={text.gameAdd.notationSample}
+      />
+      
+      <b>간단한 설명(선택)</b>
+      <TextareaStyle {...register("description")}
+        placeholder={text.gameAdd.descriptionSample}
       />
       
       <SubmitStyle type="submit" />

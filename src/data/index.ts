@@ -31,6 +31,7 @@ export const text = {
     title: '경기 기록 추가',
     subTitle: '새로운 경기를 데이터베이스에 추가합니다.',
     notationSample: '예시) 1. e4 e5 2. Nf3 Nf6 ... 8. c3 d5 0-1',
+    descriptionSample: '간단한 설명 등을 적어주세요!',
     success: '기록에 성공하였습니다!',
     error: '결과 기록에 실패했습니다!\n콘솔의 에러 메시지를 확인해 주세요.',
   },
