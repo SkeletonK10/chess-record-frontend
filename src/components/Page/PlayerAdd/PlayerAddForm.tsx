@@ -45,17 +45,15 @@ const Comp: React.FC = () => {
   const { register, handleSubmit } = useForm<IPlayerInfo>();
   const onSubmit: SubmitHandler<IPlayerInfo> = async (data: IPlayerInfo) => {
     // API Call: POST backendURL/user/
-    try {
-      const response = await axios.post(`${text.backendURL}/user/`, data);
-      alert(text.gameAdd.success);
-      console.log(response);
-      window.location.reload()
+    const response = await axios.post(`${text.backendURL}/user/`, data);
+    if (response.data.code) {
+      alert(response.data.msg);
+      console.log(data);
+      return;
     }
-    catch (err) {
-      console.error(err);
-      alert(text.gameAdd.error);
-    }
-    console.log(data);
+    alert(text.playerAdd.success);
+    console.log(response);
+    window.location.reload();
   };
   
   return (
