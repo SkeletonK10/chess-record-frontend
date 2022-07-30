@@ -55,7 +55,7 @@ export const text = {
     subTitle: '준비 중입니다!',
   },
   
-  backendURL: "http://localhost:8000",
+  backendURL: "http://chess.kuaaa.net/api",
 };
 
 export const palette = {
