@@ -46,6 +46,8 @@ export const text = {
   playerAdd: {
     title: '플레이어 등록',
     subTitle: '새로운 유저를 데이터베이스에 등록합니다.',
+    nameGuide: '1~6자의 한글',
+    useridGuide: '3~16자의 영문 및 숫자',
     success: '기록에 성공하였습니다!',
     error: '결과 기록에 실패했습니다!\n콘솔의 에러 메시지를 확인해 주세요.',
   },

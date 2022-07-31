@@ -61,14 +61,14 @@ const Comp: React.FC = () => {
       <b>이름</b>
       <InputStyle
         type="text"
-        placeholder="예: 홍길동"
+        placeholder={text.playerAdd.nameGuide}
         {...register("name")}
       />
       
       <b>구분용 아이디</b>
       <InputStyle
         type="text"
-        placeholder="3~16자의 영문 및 숫자"
+        placeholder={text.playerAdd.useridGuide}
         {...register("userid")}
       />
       <SubmitStyle type="submit" />
