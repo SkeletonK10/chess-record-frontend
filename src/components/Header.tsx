@@ -16,7 +16,8 @@ const Header = styled.div`
 
 const HeaderTitle = styled.div`
   height: 100%;
-  transform: translate(20px, 0px);
+  
+  margin-left: 20px;
   
   cursor: pointer;
   
