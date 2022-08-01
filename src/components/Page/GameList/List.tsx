@@ -14,13 +14,13 @@ interface ListProps {
 const ListDivStyle = styled.div`
   width: 100%;
   
-  margin-top: 2%;
+  margin-top: 4%;
   
   display: flex;
   flex-direction: column;
   align-items: center;
   
-  font-size: 1.2rem;
+  font-size: 1rem;
 `;
 
 const TableStyle = styled.table`

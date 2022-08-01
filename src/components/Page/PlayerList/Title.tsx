@@ -10,7 +10,7 @@ const Title = styled.div`
   justify-content: center;
   align-items: flex-end;
   
-  font-size: 2.7rem;
+  font-size: 3rem;
 `;
 
 const SubTitle = styled.div`
