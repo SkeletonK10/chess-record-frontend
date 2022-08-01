@@ -20,7 +20,7 @@ const ListDivStyle = styled.div`
   flex-direction: column;
   align-items: center;
   
-  font-size: 1rem;
+  font-size: 1.2rem;
 `;
 
 const TableStyle = styled.table`
@@ -101,7 +101,6 @@ const Comp: React.FC<ListProps> = (props: ListProps) => {
   rows.map((row: GameListEntry, index: number) => {
     return (
       <tr key={index}>
-        <TDStyle>{row.createdat}</TDStyle>
         <TDStyle>{row.white}</TDStyle>
         <TDStyle>{row.black}</TDStyle>
         <TDStyle>{row.result}</TDStyle>
@@ -120,7 +119,6 @@ const Comp: React.FC<ListProps> = (props: ListProps) => {
         <TableStyle>
           <thead>
             <tr>
-              <THStyle>기록 일자</THStyle>
               <THStyle>백 선수</THStyle>
               <THStyle>흑 선수</THStyle>
               <THStyle>결과</THStyle>
