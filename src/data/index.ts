@@ -24,6 +24,8 @@ export const text = {
       title: `${id}번 경기`,
       subTitle: `${id}번 경기에 대한 세부 정보입니다.`,
       noRecord: '기록된 경기 결과가 없습니다!',
+      noNotation: '기록된 기보가 없습니다!',
+      noDescription: '기록된 정보가 없습니다!',
     }
   },
   

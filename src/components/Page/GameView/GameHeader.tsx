@@ -73,7 +73,7 @@ const RatingStyle = styled.div`
   flex-direction: row;
   align-items: center;
 
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 `;
 
 const Profile: React.FC<ProfileProps> = (props: ProfileProps) => {
@@ -82,7 +82,7 @@ const Profile: React.FC<ProfileProps> = (props: ProfileProps) => {
     <ProfileStyle>
       <SideStyle>{props.side}</SideStyle>
       <NameStyle>{profile.name}</NameStyle>
-      <RatingStyle>{profile.rating}</RatingStyle>
+      <RatingStyle>{`${profile.rating}${profile.ratingdiff < 0 ? '-' : '+'}${Math.abs(profile.ratingdiff)}`}</RatingStyle>
     </ProfileStyle>
   );
 }

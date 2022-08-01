@@ -13,6 +13,7 @@ export interface PlayerInfo {
   id: number;
   name: string;
   rating: number;
+  ratingdiff: number;
 };
 
 // Used in gameview
@@ -22,7 +23,14 @@ export interface GameInfo {
   playedat: string;
   white: PlayerInfo;
   black: PlayerInfo;
+  startpos: string;
+  originaltime: number;
+  incrementtime: number;
+  whiterating: number;
+  blackrating: number;
   result: string;
+  whiteratingdiff: number;
+  blackratingdiff: number;
   notation?: string;
   description?: string;
 };
