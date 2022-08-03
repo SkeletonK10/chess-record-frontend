@@ -21,7 +21,7 @@ const Comp: React.FC = () => {
   const [row, setRow] = useState<GameInfo>();
   
   const getView = async () => {
-    const response = await axios.get(`${text.backendURL}/game/${id}`);
+    const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/game/${id}`);
     setRow(response.data);
   }
   

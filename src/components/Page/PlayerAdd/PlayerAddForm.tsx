@@ -45,7 +45,7 @@ const Comp: React.FC = () => {
   const { register, handleSubmit } = useForm<IPlayerInfo>();
   const onSubmit: SubmitHandler<IPlayerInfo> = async (data: IPlayerInfo) => {
     // API Call: POST backendURL/user/
-    const response = await axios.post(`${text.backendURL}/player/`, data);
+    const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/player/`, data);
     if (response.data.code) {
       alert(response.data.msg);
       console.log(data);

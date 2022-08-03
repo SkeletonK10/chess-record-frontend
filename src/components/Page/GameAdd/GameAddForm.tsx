@@ -96,7 +96,7 @@ const Comp: React.FC = () => {
   const penaltyBlack = penaltyFEN.black;
   
   const loadPlayerList = async () => {
-    const response = await axios.get(`${text.backendURL}/playerlist/`);
+    const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/playerlist/`);
     setPlayerList(response.data);
   };
   const PlayerOptions = !playerList ?
@@ -113,7 +113,7 @@ const Comp: React.FC = () => {
   const onSubmit: SubmitHandler<IGameInfo> = async (data: IGameInfo) => {
     // API Call: POST backendURL/game/
     try {
-      const response = await axios.post(`${text.backendURL}/game/`, data);
+      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/game/`, data);
       if (response.data.code) {
         alert(response.data.msg);
       }
@@ -131,6 +131,7 @@ const Comp: React.FC = () => {
   useEffect(() => {
     loadPlayerList();
     setValue("startpos", penaltyFEN.normal);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   
   return (

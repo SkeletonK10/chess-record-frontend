@@ -58,8 +58,6 @@ export const text = {
     title: '플레이어 조회',
     subTitle: '준비 중입니다!',
   },
-  
-  backendURL: "http://chess.kuaaa.net/api",
 };
 
 export const palette = {

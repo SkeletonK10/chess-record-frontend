@@ -62,38 +62,14 @@ const Comp: React.FC<ListProps> = (props: ListProps) => {
   
   const page: string = props.page || '1';
   const loadList = async () => {
-    const response = await axios.get(`${text.backendURL}/gamelist/${page}`);
+    const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/gamelist/${page}`);
     setRows(response.data);
   }
   
   useEffect(() => {
     loadList();
   });
-  // const rows: Array<GameListEntry> = [
-  //   {
-  //     id: 1,
-  //     createdAt: new Date(Date.now()),
-  //     white: "Test1",
-  //     black: "Test2",
-  //     result: "흑 승",
-  //   },
-    
-  //   {
-  //     id: 6,
-  //     createdAt: new Date(2021, 11, 6),
-  //     white: "Carlsen",
-  //     black: "Nepomniachtchi",
-  //     result: "백 승",
-  //   },
-    
-  //   {
-  //     id: 7,
-  //     createdAt: new Date(2021, 11, 7),
-  //     white: "Nepomniachtchi",
-  //     black: "Carlsen",
-  //     result: "무승부",
-  //   }
-  // ];
+
   const isEmpty = !rows;
   
   const Comps = isEmpty ?
