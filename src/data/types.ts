@@ -7,6 +7,13 @@ export interface GameListEntry {
   result: string;
 };
 
+export interface PlayerListEntry {
+  id: number;
+  userid: string;
+  name: string;
+  rating: number;
+}
+
 // Used in gameview and GameInfo(below)
 // Used in profile view
 export interface PlayerInfo {

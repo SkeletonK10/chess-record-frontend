@@ -56,7 +56,8 @@ export const text = {
   
   playerList: {
     title: '플레이어 조회',
-    subTitle: '준비 중입니다!',
+    subTitle: '등록된 유저 목록을 조회합니다.',
+    noRecord: '등록된 유저가 없습니다!',
   },
 };
 
