@@ -53,28 +53,39 @@ const LinkButton = styled.div`
 const SubStyle = styled.div`
   vertical-align: -0.5em;
   font-size: 0.5em;
+`;
+
+const PageControllerStyle = styled.div`
+  margin-top: 4%;
   
+  display: flex;
+  justify-content: center;
 `
 
 const Comp: React.FC<ListProps> = (props: ListProps) => {
   const navigate = useNavigate();
   const [rows, setRows] = useState([]);
+  const [endPage, setEndPage] = useState(0);
   
-  const page: string = props.page || '1';
+  const limit: number = 20;
+  const page: number = Number.isInteger(Number(props.page)) ? Number(props.page) : 1;
+  const offset: number = limit * (page - 1);
   const loadList = async () => {
-    const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/gamelist/${page}`);
+    const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/gamelist/`);
     setRows(response.data);
   }
   
   useEffect(() => {
     loadList();
-  });
+    setEndPage(Math.ceil(rows.length / limit));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [rows.length]);
 
   const isEmpty = !rows;
   
   const Comps = isEmpty ?
   undefined :
-  rows.map((row: GameListEntry, index: number) => {
+  rows.slice(offset, offset + limit).map((row: GameListEntry, index: number) => {
     return (
       <tr key={index}>
         <TDStyle>{row.white}</TDStyle>
@@ -106,6 +117,19 @@ const Comp: React.FC<ListProps> = (props: ListProps) => {
           </tbody>
         </TableStyle>
       )}
+      <PageControllerStyle>
+        {page <= 1 ? (<></>) : (
+          <LinkButton onClick={() => navigate(`${URL.gameList}${page - 1}`)}>
+            &lt;
+          </LinkButton>
+        )}
+        <b>&nbsp;&nbsp;{page}&nbsp;&nbsp;</b>
+        {page >= endPage ? (<></>) : (
+          <LinkButton onClick={() => navigate(`${URL.gameList}${page + 1}`)}>
+            &gt;
+          </LinkButton>
+        )}
+      </PageControllerStyle>
     </ListDivStyle>
   );
 }
