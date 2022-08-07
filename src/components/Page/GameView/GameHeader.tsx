@@ -8,11 +8,14 @@ interface GameHeaderProps {
   white: PlayerInfo;
   black: PlayerInfo;
   result: string;
+  whiteratingdiff: number;
+  blackratingdiff: number;
 };
 
 interface ProfileProps {
   side: string;
   value: PlayerInfo;
+  ratingdiff: number;
 }
 
 const GameHeaderStyle = styled.div`
@@ -82,18 +85,23 @@ const Profile: React.FC<ProfileProps> = (props: ProfileProps) => {
     <ProfileStyle>
       <SideStyle>{props.side}</SideStyle>
       <NameStyle>{profile.name}</NameStyle>
-      <RatingStyle>{`${profile.rating}${profile.ratingdiff < 0 ? '-' : '+'}${Math.abs(profile.ratingdiff)}`}</RatingStyle>
+      <RatingStyle>{`${profile.rating}${props.ratingdiff < 0 ? '-' : '+'}${Math.abs(props.ratingdiff)}`}</RatingStyle>
     </ProfileStyle>
   );
 }
 
 const Comp: React.FC<GameHeaderProps> = (props: GameHeaderProps) => {
-  const { white, black, result } = props;
+  const {
+    white,
+    black,
+    result,
+    whiteratingdiff,
+    blackratingdiff } = props;
   return (
     <GameHeaderStyle>
-      <Profile side="백" value={white} />
+      <Profile side="백" value={white} ratingdiff={whiteratingdiff} />
       <ResultStyle>{result}</ResultStyle>
-      <Profile side="흑" value={black} />
+      <Profile side="흑" value={black} ratingdiff={blackratingdiff} />
     </GameHeaderStyle>
   );
 }

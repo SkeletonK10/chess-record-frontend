@@ -37,7 +37,12 @@ const Comp: React.FC = () => {
         <NoResultStyle>{text.gameView().noRecord}</NoResultStyle>
       ) : (
         <>
-          <GameHeader white={row.white} black={row.black} result={row.result} />
+          <GameHeader
+            white={row.white}
+            black={row.black}
+            result={row.result}
+            whiteratingdiff={row.whiteratingdiff}
+            blackratingdiff={row.blackratingdiff} />
           <GameBody value={row} />
         </>
       )}
