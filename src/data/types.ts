@@ -19,8 +19,8 @@ export interface PlayerListEntry {
 export interface PlayerInfo {
   id: number;
   name: string;
+  userid: string;
   rating: number;
-  ratingdiff: number;
 };
 
 // Used in gameview
