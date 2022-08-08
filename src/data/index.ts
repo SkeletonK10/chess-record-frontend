@@ -5,6 +5,7 @@ export const URL = {
   gameView: "/game/",
   playerAdd: "/newplayer/",
   playerList: "/playerlist/",
+  playerView: "/player/",
 }
 
 export const text = {

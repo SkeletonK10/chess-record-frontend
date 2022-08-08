@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import styled from '@emotion/styled';
+import { MdReadMore } from 'react-icons/md';
 
-import { text, palette } from "../../../data";
+import { URL, text, palette } from "../../../data";
 import { PlayerListEntry } from "../../../data/types";
 
 interface ListProps {
@@ -42,7 +44,19 @@ const TDStyle = styled.td`
   border: 3px solid ${palette.wood};
 `;
 
+const LinkButton = styled.div`
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+`;
+
+const SubStyle = styled.div`
+  vertical-align: -0.5em;
+  font-size: 0.5em;
+`;
+
 const Comp: React.FC<ListProps> = (props: ListProps) => {
+  const navigate = useNavigate();
   const [rows, setRows] = useState([]);
   const loadList = async () => {
     const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/playerlist/`);
@@ -63,11 +77,11 @@ const Comp: React.FC<ListProps> = (props: ListProps) => {
         <TDStyle>{row.name}</TDStyle>
         <TDStyle>{row.userid}</TDStyle>
         <TDStyle>{row.rating}</TDStyle>
-        {/* <TDStyle>
-          <LinkButton onClick={() => navigate(`${URL.gameView}${row.id}`)}>
+        <TDStyle>
+          <LinkButton onClick={() => navigate(`${URL.playerView}${row.id}`)}>
             <MdReadMore /><SubStyle>{row.id}</SubStyle>
           </LinkButton>
-        </TDStyle> */}
+        </TDStyle>
       </tr>
     );
   });
@@ -81,6 +95,7 @@ const Comp: React.FC<ListProps> = (props: ListProps) => {
               <THStyle>이름</THStyle>
               <THStyle>아이디</THStyle>
               <THStyle>레이팅</THStyle>
+              <THStyle>상세</THStyle>
             </tr>
           </thead>
           <tbody>
