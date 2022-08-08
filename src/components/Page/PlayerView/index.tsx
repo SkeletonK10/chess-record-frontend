@@ -6,6 +6,7 @@ import Page from '../../Page';
 import Title from './Title';
 import PlayerHeader from './PlayerHeader';
 import PlayerBody from './PlayerBody';
+import List from './List';
 
 import { text } from '../../../data';
 import { PlayerInfo } from '../../../data/types';
@@ -34,6 +35,7 @@ const Comp: React.FC = () => {
         <>
           <PlayerHeader />
           <PlayerBody value={row} />
+          <List />
         </>)}
     </Page>
   );
