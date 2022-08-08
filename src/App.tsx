@@ -8,6 +8,7 @@ import GameListRouter from './components/Page/GameList/Router';
 import GameAdd from './components/Page/GameAdd';
 import PlayerAdd from './components/Page/PlayerAdd';
 import PlayerList from './components/Page/PlayerList';
+import PlayerView from './components/Page/PlayerView';
 
 const App: React.FC = () => {
   return (
@@ -20,6 +21,7 @@ const App: React.FC = () => {
         <Route path="/newgame/" element={<GameAdd />} />
         <Route path="/newplayer/" element={<PlayerAdd />} />
         <Route path="/playerlist/*" element={<PlayerList />} />
+        <Route path="/player/:id/" element={<PlayerView />} />
       </Routes>
     </Router>
     

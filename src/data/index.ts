@@ -58,6 +58,13 @@ export const text = {
     title: '플레이어 조회',
     subTitle: '등록된 유저 목록을 조회합니다.',
     noRecord: '등록된 유저가 없습니다!',
+    
+  },
+  
+  playerView: {
+    title: '플레이어 상세',
+    subTitle: `플레이어의 세부 정보를 조회합니다.`,
+    noRecord: '등록된 해당 유저가 없습니다!',
   },
 };
 
