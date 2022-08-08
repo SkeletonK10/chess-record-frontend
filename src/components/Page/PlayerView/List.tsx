@@ -83,7 +83,7 @@ const Comp: React.FC = () => {
     setEndPage(Math.ceil(rows.length / limit));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [rows.length]);
-
+  
   const isEmpty = !rows;
   
   const Comps = isEmpty ?
@@ -123,13 +123,13 @@ const Comp: React.FC = () => {
       )}
       <PageControllerStyle>
         {page <= 1 ? (<></>) : (
-          <LinkButton onClick={() => navigate(`${URL.gameList}${page - 1}`)}>
+          <LinkButton onClick={() => setPage(page - 1)}>
             &lt;
           </LinkButton>
         )}
         <b>&nbsp;&nbsp;{page}&nbsp;&nbsp;</b>
         {page >= endPage ? (<></>) : (
-          <LinkButton onClick={() => navigate(`${URL.gameList}${page + 1}`)}>
+          <LinkButton onClick={() => setPage(page + 1)}>
             &gt;
           </LinkButton>
         )}
