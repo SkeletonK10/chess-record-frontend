@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
+import ProfileImage from './ProfileImage';
+
 const GameHeaderStyle = styled.div`
   width: 100%;
-  margin-top: 20%;
+  margin-top: 4%;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -14,7 +16,9 @@ const GameHeaderStyle = styled.div`
 
 const Comp: React.FC = () => {
   return (
-    <GameHeaderStyle />
+    <GameHeaderStyle>
+      <ProfileImage />
+    </GameHeaderStyle>
   );
 }
 
