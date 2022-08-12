@@ -6,6 +6,8 @@ import styled from '@emotion/styled';
 import { text, palette, penaltyFEN } from "../../../data";
 import { PlayerInfo, IGameInfo } from "../../../data/types";
 
+import Notation from './Notation';
+
 const FormStyle = styled.form`
   width: 100%;
   

@@ -3,8 +3,13 @@ import styled from '@emotion/styled';
 
 import Header from './Header';
 
+import { palette } from '../data';
+
 const PageStyle = styled.div`
   width: 375px;
+  
+  background-color: ${palette.ivory};
+  color: ${palette.wood};
   
   display: flex;
   flex-direction: column;

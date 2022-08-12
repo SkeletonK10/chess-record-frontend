@@ -1,8 +1,6 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
 * {
-  background-color: #ece6cc;
-  color: #8c531b;
   font-family: Pretendard, -apple-system, BlinkMacSystemFont,
     system-ui, Roboto, 'Helvetica Neue', 'Segoe UI',
     'Apple SD Gothic Neo', 'Noto Sans KR',
@@ -10,12 +8,18 @@
 }
 
 body {
+  background-color: #ece6cc;
   margin: 0;
   overflow-x: hidden;
   display: flex;
   justify-content: center;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+input, select, textarea {
+  background-color: #ece6cc;
+  color: #8c531b;
 }
 
 code {
