@@ -210,8 +210,9 @@ const Comp: React.FC = () => {
       </SelectStyle>
       
       <b>기보(선택)</b>
-      <TextareaStyle {...register("notation")}
-        placeholder={text.gameAdd.notationSample}
+      <Notation
+        register={register}
+        setValue={setValue}
       />
       
       <b>간단한 설명(선택)</b>
