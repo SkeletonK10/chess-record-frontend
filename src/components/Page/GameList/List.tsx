@@ -72,14 +72,16 @@ const Comp: React.FC<ListProps> = (props: ListProps) => {
   const offset: number = limit * (page - 1);
   const loadList = async () => {
     const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/gamelist/`);
-    setRows(response.data);
+    setRows(response.data.list);
   }
   
   useEffect(() => {
     loadList();
-    setEndPage(Math.ceil(rows.length / limit));
+    if (rows) {
+      setEndPage(Math.ceil(rows.length / limit));
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [rows.length]);
+  }, []);
 
   const isEmpty = !rows;
   

@@ -1,11 +1,25 @@
 // Used in gamelist
 export interface GameListEntry {
   id: number;
+  playedat: string;
   createdat: string;
   white: string;
   black: string;
+  whiteid: number;
+  blackid: number;
   result: string;
 };
+
+export interface GameList {
+  list: Array<GameListEntry>;
+  summary: {
+    total: number;
+    win: number;
+    draw: number;
+    lose: number;
+    winRate: string;
+  }
+}
 
 export interface PlayerListEntry {
   id: number;
