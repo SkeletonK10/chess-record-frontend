@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styled from '@emotion/styled';
 import { MdReadMore } from 'react-icons/md';
 
 import { URL, text, palette } from "../../../data";
 import { GameListEntry } from "../../../data/types";
+
+interface PlayerGameListProps {
+  list: Array<GameListEntry>;
+}
 
 const ListDivStyle = styled.div`
   width: 100%;
@@ -64,31 +67,26 @@ const PageControllerStyle = styled.div`
   justify-content: center;
 `
 
-const Comp: React.FC = () => {
-  const { id } = useParams();
+const Comp: React.FC<PlayerGameListProps> = ({ list }) => {
   const navigate = useNavigate();
-  const [rows, setRows] = useState([]);
   const [page, setPage] = useState(1);
   const [endPage, setEndPage] = useState(0);
   
   const limit: number = 20;
   const offset: number = limit * (page - 1);
-  const loadList = async () => {
-    const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/gamelist?playerid=${id}`);
-    setRows(response.data);
-  }
   
   useEffect(() => {
-    loadList();
-    setEndPage(Math.ceil(rows.length / limit));
+    if (list) {
+      setEndPage(Math.ceil(list.length / limit));
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [rows.length]);
+  }, []);
   
-  const isEmpty = !rows;
+  const isEmpty = !list;
   
   const Comps = isEmpty ?
   undefined :
-  rows.slice(offset, offset + limit).map((row: GameListEntry, index: number) => {
+  list.slice(offset, offset + limit).map((row: GameListEntry, index: number) => {
     return (
       <tr key={index}>
         <TDStyle>{row.white}</TDStyle>

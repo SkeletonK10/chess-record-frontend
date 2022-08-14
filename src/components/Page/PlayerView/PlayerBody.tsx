@@ -2,10 +2,13 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 import { palette } from '../../../data';
-import { PlayerInfo } from '../../../data/types';
+import { GameList, PlayerInfo } from '../../../data/types';
+
+import List from './List';
 
 interface PlayerBodyProps {
-  value: PlayerInfo;
+  player: PlayerInfo;
+  gameList: GameList;
 }
 
 interface InfoRowProps {
@@ -58,9 +61,8 @@ const InfoRow: React.FC<InfoRowProps> = (props: InfoRowProps) => {
   );
 }
 
-const Comp: React.FC<PlayerBodyProps> = (props: PlayerBodyProps) => {
-  const player = props.value;
-  
+const Comp: React.FC<PlayerBodyProps> = ({ player, gameList }: PlayerBodyProps) => {
+  const summary = gameList.summary;
   return (
     <PlayerBodyStyle>
       <TableStyle>
@@ -68,8 +70,10 @@ const Comp: React.FC<PlayerBodyProps> = (props: PlayerBodyProps) => {
           <InfoRow index='이름' value={player.name} />
           <InfoRow index='아이디' value={player.userid} />
           <InfoRow index='현재 레이팅' value={player.rating} />
+          <InfoRow index='전적' value={`${summary.total}전 ${summary.win}승 ${summary.draw}무 ${summary.lose}패`} />
         </tbody>
       </TableStyle>
+      <List list={gameList.list} />
     </PlayerBodyStyle>
   );
 }

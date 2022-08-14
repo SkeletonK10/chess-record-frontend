@@ -6,36 +6,42 @@ import Page from '../../Page';
 import Title from './Title';
 import PlayerHeader from './PlayerHeader';
 import PlayerBody from './PlayerBody';
-import List from './List';
 
 import { text } from '../../../data';
-import { PlayerInfo } from '../../../data/types';
+import { GameList, PlayerInfo } from '../../../data/types';
 
 const Comp: React.FC = () => {
   const { id } = useParams();
-  const [row, setRow] = useState<PlayerInfo>();
+  const [player, setPlayer] = useState<PlayerInfo>();
+  const [gameList, setGameList] = useState<GameList>();
   
-  const getView = async () => {
+  const getPlayer = async () => {
     const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/player/${id}`);
-    setRow(response.data);
+    setPlayer(response.data);
+  }
+  
+  const getGameList = async () => {
+    const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/gamelist?playerid=${id}`);
+    setGameList(response.data);
   }
   
   useEffect(() => {
-    getView();
-  });
+    getPlayer();
+    getGameList();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   
   return (
     <Page>
       <Title />
-      {!row ? (
+      {(!player || !gameList) ? (
         <>
           {text.playerView.noRecord}
         </>
       ) : (
         <>
           <PlayerHeader />
-          <PlayerBody value={row} />
-          <List />
+          <PlayerBody player={player} gameList={gameList} />
         </>)}
     </Page>
   );
