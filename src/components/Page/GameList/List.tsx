@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import styled from '@emotion/styled';
 import { MdReadMore } from 'react-icons/md';
@@ -7,8 +6,8 @@ import { MdReadMore } from 'react-icons/md';
 import { URL, text, palette } from "../../../data";
 import { GameListEntry } from "../../../data/types";
 
-interface ListProps {
-  page?: string;
+interface GameListProps {
+  list: Array<GameListEntry>;
 }
 
 const ListDivStyle = styled.div`
@@ -62,32 +61,26 @@ const PageControllerStyle = styled.div`
   justify-content: center;
 `
 
-const Comp: React.FC<ListProps> = (props: ListProps) => {
+const Comp: React.FC<GameListProps> = ( { list } ) => {
   const navigate = useNavigate();
-  const [rows, setRows] = useState([]);
+  const [page, setPage] = useState(1);
   const [endPage, setEndPage] = useState(0);
   
   const limit: number = 20;
-  const page: number = Number.isInteger(Number(props.page)) ? Number(props.page) : 1;
   const offset: number = limit * (page - 1);
-  const loadList = async () => {
-    const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/gamelist/`);
-    setRows(response.data.list);
-  }
-  
+
   useEffect(() => {
-    loadList();
-    if (rows) {
-      setEndPage(Math.ceil(rows.length / limit));
+    if (list) {
+      setEndPage(Math.ceil(list.length / limit));
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  const isEmpty = !rows;
+  
+  const isEmpty = !list;
   
   const Comps = isEmpty ?
   undefined :
-  rows.slice(offset, offset + limit).map((row: GameListEntry, index: number) => {
+  list.slice(offset, offset + limit).map((row: GameListEntry, index: number) => {
     return (
       <tr key={index}>
         <TDStyle>{row.white}</TDStyle>
@@ -121,13 +114,13 @@ const Comp: React.FC<ListProps> = (props: ListProps) => {
       )}
       <PageControllerStyle>
         {page <= 1 ? (<></>) : (
-          <LinkButton onClick={() => navigate(`${URL.gameList}${page - 1}`)}>
+          <LinkButton onClick={() => setPage(page - 1)}>
             &lt;
           </LinkButton>
         )}
         <b>&nbsp;&nbsp;{page}&nbsp;&nbsp;</b>
         {page >= endPage ? (<></>) : (
-          <LinkButton onClick={() => navigate(`${URL.gameList}${page + 1}`)}>
+          <LinkButton onClick={() => setPage(page + 1)}>
             &gt;
           </LinkButton>
         )}
