@@ -72,7 +72,7 @@ const Comp: React.FC<PlayerGameListProps> = ({ list }) => {
   const [page, setPage] = useState(1);
   const [endPage, setEndPage] = useState(0);
   
-  const limit: number = 20;
+  const limit: number = 5;
   const offset: number = limit * (page - 1);
   
   useEffect(() => {
