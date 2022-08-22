@@ -69,6 +69,11 @@ export interface IGameInfo {
   description?: string;
 };
 
+export interface ModifiableIGameInfo {
+  notation?: string;
+  description?: string;
+}
+
 // Used in newuser form
 export interface IPlayerInfo {
   name: string;
