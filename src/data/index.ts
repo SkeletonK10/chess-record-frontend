@@ -3,6 +3,7 @@ export const URL = {
   gameAdd: "/newgame/",
   gameList: "/gamelist/",
   gameView: "/game/",
+  gameModify: "/modifygame/",
   playerAdd: "/newplayer/",
   playerList: "/playerlist/",
   playerView: "/player/",
@@ -27,6 +28,19 @@ export const text = {
       noRecord: '기록된 경기 결과가 없습니다!',
       noNotation: '기록된 기보가 없습니다!',
       noDescription: '기록된 정보가 없습니다!',
+    }
+  },
+  
+  gameModify: (id?: number) => {
+    if (typeof id === "undefined") id = -1;
+    return {
+      title: `경기 수정`,
+      subTitle: `${id}번 경기를 수정합니다.\n기보와 설명 부분만 수정 가능합니다.`,
+      noRecord: '기록된 경기 결과가 없습니다!',
+      noNotation: '기록된 기보가 없습니다!',
+      noDescription: '기록된 정보가 없습니다!',
+      success: '수정에 성공하였습니다!',
+      error: '수정에 실패했습니다!\n콘솔의 에러 메시지를 확인해 주세요.',
     }
   },
   

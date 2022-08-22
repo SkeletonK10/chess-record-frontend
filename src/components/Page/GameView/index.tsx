@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import styled from '@emotion/styled';
 import axios from 'axios';
 
@@ -8,7 +8,7 @@ import Title from './Title';
 import GameHeader from './GameHeader';
 import GameBody from './GameBody';
 
-import { text } from '../../../data';
+import { URL, text, palette } from '../../../data';
 import { GameInfo } from '../../../data/types';
 
 const NoResultStyle = styled.div`
@@ -16,8 +16,25 @@ const NoResultStyle = styled.div`
   font-size: 2rem;
 `;
 
+const ModifyButtonStyle = styled.div`
+  width: 35%;
+  height: 10%;
+
+  margin-top: 1.5%;
+  margin-bottom: 1.5%;
+
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  
+  border: 3px solid ${palette.wood};
+  outline: 0;
+  font-size: 1.2rem;
+`;
+
 const Comp: React.FC = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [row, setRow] = useState<GameInfo>();
   
   const getView = async () => {
@@ -44,6 +61,9 @@ const Comp: React.FC = () => {
             whiteratingdiff={row.whiteratingdiff}
             blackratingdiff={row.blackratingdiff} />
           <GameBody value={row} />
+          <ModifyButtonStyle onClick={() => navigate(`${URL.gameModify}${row.id}`)}>
+            수정
+          </ModifyButtonStyle>
         </>
       )}
     </Page>
