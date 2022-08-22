@@ -69,7 +69,8 @@ const Comp: React.FC = () => {
   
   useEffect(() => {
     getView();
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   
   const isEmpty = !row;
   return (

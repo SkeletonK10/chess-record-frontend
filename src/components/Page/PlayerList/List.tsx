@@ -65,7 +65,8 @@ const Comp: React.FC<ListProps> = (props: ListProps) => {
   
   useEffect(() => {
     loadList();
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const isEmpty = !rows;
   
