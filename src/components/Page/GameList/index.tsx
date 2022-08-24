@@ -4,6 +4,7 @@ import axios from 'axios';
 import Page from '../../Page';
 import Title from './Title';
 import List from './List';
+import BackButton from '../../BackButton';
 
 import { GameList } from '../../../data/types';
 import { text } from '../../../data';
@@ -24,7 +25,8 @@ const Comp: React.FC = () => {
   return (
     <Page>
       <Title />
-      {!gameList ? (text.gameList.noRecord) : (<List list={gameList.list} />)}
+      {!gameList ? (<><br />{text.gameList.noRecord}</>) : (<List list={gameList.list} />)}
+      <BackButton />
     </Page>
   );
 }

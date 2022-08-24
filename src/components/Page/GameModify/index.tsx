@@ -8,6 +8,7 @@ import Page from '../../Page';
 import Title from './Title';
 import GameHeader from './GameHeader';
 import GameBody from './GameBody';
+import BackButton from '../../BackButton';
 
 import { text, palette, URL } from '../../../data';
 import { GameInfo, ModifiableIGameInfo } from '../../../data/types';
@@ -27,14 +28,30 @@ const FormStyle = styled.form`
   box-sizing: border-box;
 `;
 
-const SubmitStyle = styled.input`
+const ButtonContainerStyle = styled.div`
+  width: 100%;
+  
+  display: flex;
+  justify-content: space-around;
+`;
+
+const SubmitStyle = styled.div`
   width: 35%;
   height: 10%;
 
-  margin-top: 1.5%;
-  margin-bottom: 1.5%;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  
+  display: flex;
+  justify-content: center;
 
   border: 3px solid ${palette.wood};
+  outline: 0;
+  font-size: 1.2rem;
+`;
+
+const SubmitInputStyle = styled.input`
+  border: 0px;
   outline: 0;
   font-size: 1.2rem;
 `;
@@ -79,18 +96,24 @@ const Comp: React.FC = () => {
       {isEmpty ? (
         <NoResultStyle>{text.gameView().noRecord}</NoResultStyle>
       ) : (
-        <FormStyle onSubmit={handleSubmit(onSubmit)}>
-          <GameHeader
-            white={row.white}
-            black={row.black}
-            result={row.result}
-            whiteratingdiff={row.whiteratingdiff}
-            blackratingdiff={row.blackratingdiff} />
-          <GameBody
-            value={row}
-            register={register} />
-          <SubmitStyle type="submit" />
-        </FormStyle>
+          <FormStyle onSubmit={handleSubmit(onSubmit)}>
+            <GameHeader
+              white={row.white}
+              black={row.black}
+              result={row.result}
+              whiteratingdiff={row.whiteratingdiff}
+              blackratingdiff={row.blackratingdiff} />
+            <GameBody
+              value={row}
+              register={register} />
+            <ButtonContainerStyle>
+              <BackButton />
+              <SubmitStyle>
+                <SubmitInputStyle type="submit" />
+              </SubmitStyle>
+            </ButtonContainerStyle>
+            
+          </FormStyle>
       )}
     </Page>
   );

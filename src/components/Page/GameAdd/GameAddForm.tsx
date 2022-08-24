@@ -7,6 +7,7 @@ import { text, palette, penaltyFEN } from "../../../data";
 import { PlayerInfo, IGameInfo } from "../../../data/types";
 
 import Notation from './Notation';
+import BackButton from '../../BackButton';
 
 const FormStyle = styled.form`
   width: 100%;
@@ -79,14 +80,30 @@ const TimeDescriptionStyle = styled.div`
   font-size: 0.9rem;
 `;
 
-const SubmitStyle = styled.input`
+const ButtonContainerStyle = styled.div`
+  width: 100%;
+  
+  display: flex;
+  justify-content: space-around;
+`;
+
+const SubmitStyle = styled.div`
   width: 35%;
   height: 10%;
 
-  margin-top: 1.5%;
-  margin-bottom: 1.5%;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  
+  display: flex;
+  justify-content: center;
 
   border: 3px solid ${palette.wood};
+  outline: 0;
+  font-size: 1.2rem;
+`;
+
+const SubmitInputStyle = styled.input`
+  border: 0px;
   outline: 0;
   font-size: 1.2rem;
 `;
@@ -220,7 +237,12 @@ const Comp: React.FC = () => {
         placeholder={text.gameAdd.descriptionSample}
       />
       
-      <SubmitStyle type="submit" />
+      <ButtonContainerStyle>
+        <BackButton />
+        <SubmitStyle>
+          <SubmitInputStyle type="submit" />
+        </SubmitStyle>
+      </ButtonContainerStyle>
     </FormStyle>
   );
 }

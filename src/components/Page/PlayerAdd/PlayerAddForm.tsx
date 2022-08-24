@@ -3,6 +3,8 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import axios from 'axios';
 import styled from '@emotion/styled';
 
+import BackButton from '../../BackButton';
+
 import { text, palette } from "../../../data";
 import { IPlayerInfo } from "../../../data/types";
 
@@ -29,14 +31,30 @@ const InputStyle = styled.input`
   font-size: 1.2rem;
 `;
 
-const SubmitStyle = styled.input`
+const ButtonContainerStyle = styled.div`
+  width: 100%;
+  
+  display: flex;
+  justify-content: space-around;
+`;
+
+const SubmitStyle = styled.div`
   width: 35%;
   height: 10%;
 
-  margin-top: 1%;
-  margin-bottom: 1%;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  
+  display: flex;
+  justify-content: center;
 
   border: 3px solid ${palette.wood};
+  outline: 0;
+  font-size: 1.2rem;
+`;
+
+const SubmitInputStyle = styled.input`
+  border: 0px;
   outline: 0;
   font-size: 1.2rem;
 `;
@@ -71,7 +89,12 @@ const Comp: React.FC = () => {
         placeholder={text.playerAdd.useridGuide}
         {...register("userid")}
       />
-      <SubmitStyle type="submit" />
+      <ButtonContainerStyle>
+        <BackButton />
+        <SubmitStyle>
+          <SubmitInputStyle type="submit" />
+        </SubmitStyle>
+      </ButtonContainerStyle>
     </FormStyle>
   );
 }

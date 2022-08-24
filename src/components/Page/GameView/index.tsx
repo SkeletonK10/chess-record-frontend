@@ -7,6 +7,7 @@ import Page from '../../Page';
 import Title from './Title';
 import GameHeader from './GameHeader';
 import GameBody from './GameBody';
+import BackButton from '../../BackButton';
 
 import { URL, text, palette } from '../../../data';
 import { GameInfo } from '../../../data/types';
@@ -14,6 +15,13 @@ import { GameInfo } from '../../../data/types';
 const NoResultStyle = styled.div`
   margin-top: 5%;
   font-size: 2rem;
+`;
+
+const ButtonContainerStyle = styled.div`
+  width: 100%;
+  
+  display: flex;
+  justify-content: space-around;
 `;
 
 const ModifyButtonStyle = styled.div`
@@ -52,7 +60,10 @@ const Comp: React.FC = () => {
     <Page>
       <Title id={Number(id)} />
       {isEmpty ? (
-        <NoResultStyle>{text.gameView().noRecord}</NoResultStyle>
+        <NoResultStyle>
+          {text.gameView().noRecord}
+          <BackButton />
+        </NoResultStyle>
       ) : (
         <>
           <GameHeader
@@ -62,9 +73,13 @@ const Comp: React.FC = () => {
             whiteratingdiff={row.whiteratingdiff}
             blackratingdiff={row.blackratingdiff} />
           <GameBody value={row} />
-          <ModifyButtonStyle onClick={() => navigate(`${URL.gameModify}${row.id}`)}>
-            수정
-          </ModifyButtonStyle>
+          <ButtonContainerStyle>
+            <BackButton />
+            <ModifyButtonStyle onClick={() => navigate(`${URL.gameModify}${row.id}`)}>
+              수정
+            </ModifyButtonStyle>
+          </ButtonContainerStyle>
+          
         </>
       )}
     </Page>

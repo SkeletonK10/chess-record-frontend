@@ -6,6 +6,7 @@ import Page from '../../Page';
 import Title from './Title';
 import PlayerHeader from './PlayerHeader';
 import PlayerBody from './PlayerBody';
+import BackButton from '../../BackButton';
 
 import { text } from '../../../data';
 import { GameList, PlayerInfo } from '../../../data/types';
@@ -37,12 +38,14 @@ const Comp: React.FC = () => {
       {(!player || !gameList) ? (
         <>
           {text.playerView.noRecord}
+          <BackButton />
         </>
       ) : (
-        <>
-          <PlayerHeader />
-          <PlayerBody player={player} gameList={gameList} />
-        </>)}
+          <>
+            <PlayerHeader />
+            <PlayerBody player={player} gameList={gameList} />
+            <BackButton />
+          </>)}
     </Page>
   );
 }
