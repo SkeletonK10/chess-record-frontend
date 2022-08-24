@@ -98,7 +98,7 @@ const Comp: React.FC<NotationProps> = (props: NotationProps) => {
       }
       {notationType === 2 ?
         (
-          <TextareaStyle {...register("description")}
+          <TextareaStyle {...register("notation")}
             placeholder={text.gameAdd.notationSample}
           />
         ) : undefined

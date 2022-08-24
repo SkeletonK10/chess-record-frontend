@@ -4,7 +4,6 @@ import { UseFormRegister } from 'react-hook-form';
 
 import { text, palette } from '../../../data';
 import { GameInfo, ModifiableIGameInfo } from '../../../data/types';
-import { isRegularExpressionLiteral } from 'typescript';
 
 interface GameBodyProps {
   value: GameInfo;
