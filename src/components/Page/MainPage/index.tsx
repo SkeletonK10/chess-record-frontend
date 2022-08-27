@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import axios from 'axios';
 
 import Page from '../../Page';
 import MainImage from './MainImage'
@@ -9,6 +10,12 @@ import { URL, text } from '../../../data';
 
 
 const Comp: React.FC = () => {
+  const connectionTest= async () => {
+    await axios.get(`${process.env.REACT_APP_BACKEND_URL}`);
+  }
+  useEffect(() => {
+    connectionTest();
+  }, []);
   return (
     <Page>
       <MainImage />
