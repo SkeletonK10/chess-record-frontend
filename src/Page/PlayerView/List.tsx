@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import styled from '@emotion/styled';
 import { MdReadMore } from 'react-icons/md';
 
-import { URL, text, palette } from "../../data";
+import { URL, palette } from "../../data";
 import { GameListEntry } from "../../data/types";
 
 interface PlayerGameListProps {
