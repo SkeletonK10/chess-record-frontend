@@ -9,14 +9,10 @@ import Title from '../../components/Title';
 import GameHeader from './GameHeader';
 import GameBody from './GameBody';
 import BackButton from '../../components/BackButton';
+import NoRecord from '../../components/NoRecord';
 
 import { text, palette, URL } from '../../data';
 import { GameInfo, ModifiableIGameInfo } from '../../data/types';
-
-const NoResultStyle = styled.div`
-  margin-top: 5%;
-  font-size: 2rem;
-`;
 
 const FormStyle = styled.form`
   width: 100%;
@@ -97,7 +93,7 @@ const Comp: React.FC = () => {
         subTitle={text.gameModify.subTitle}
       />
       {isEmpty ? (
-        <NoResultStyle>{text.gameModify.noRecord}</NoResultStyle>
+        <NoRecord message={text.gameModify.noRecord} />
       ) : (
           <FormStyle onSubmit={handleSubmit(onSubmit)}>
             <GameHeader

@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import styled from '@emotion/styled';
 import { MdReadMore } from 'react-icons/md';
 
+import NoRecord from '../../components/NoRecord';
+
 import { URL, text, palette } from "../../data";
 import { PlayerListEntry } from "../../data/types";
 
@@ -89,7 +91,7 @@ const Comp: React.FC<ListProps> = (props: ListProps) => {
   
   return (
     <ListDivStyle>
-      {isEmpty ? (text.playerList.noRecord) : (
+      {isEmpty ? (<NoRecord message={text.playerList.noRecord} />) : (
         <TableStyle>
           <thead>
             <tr>

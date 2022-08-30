@@ -8,14 +8,10 @@ import Title from '../../components/Title';
 import GameHeader from './GameHeader';
 import GameBody from './GameBody';
 import BackButton from '../../components/BackButton';
+import NoRecord from '../../components/NoRecord';
 
 import { URL, text, palette } from '../../data';
 import { GameInfo } from '../../data/types';
-
-const NoResultStyle = styled.div`
-  margin-top: 5%;
-  font-size: 2rem;
-`;
 
 const ButtonContainerStyle = styled.div`
   width: 100%;
@@ -62,11 +58,10 @@ const Comp: React.FC = () => {
         title={text.gameView.title}
         subTitle={text.gameView.subTitle}
       />
-      {isEmpty ? (
-        <NoResultStyle>
-          {text.gameView.noRecord}
+      {isEmpty ? (<>
+          <NoRecord message={text.gameView.noRecord} />
           <BackButton />
-        </NoResultStyle>
+        </>
       ) : (
         <>
           <GameHeader
