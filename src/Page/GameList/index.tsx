@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import Page from '../../components/Page';
-import Title from './Title';
+import Title from '../../components/Title';
 import List from './List';
 import BackButton from '../../components/BackButton';
 
@@ -24,7 +24,10 @@ const Comp: React.FC = () => {
   
   return (
     <Page>
-      <Title />
+      <Title
+        title={text.gameList.title}
+        subTitle={text.gameList.subTitle}
+      />
       {!gameList ? (<><br />{text.gameList.noRecord}</>) : (<List list={gameList.list} />)}
       <BackButton />
     </Page>

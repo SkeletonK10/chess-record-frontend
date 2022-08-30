@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import Page from '../../components/Page';
 import MainImage from './MainImage'
-import Title from './Title'
+import Title from '../../components/Title'
 import MainButton from './MainButton'
 
 import { URL, text } from '../../data';
@@ -19,7 +19,10 @@ const Comp: React.FC = () => {
   return (
     <Page>
       <MainImage />
-      <Title />
+      <Title
+        title={text.main.title}
+        subTitle={text.main.subTitle}
+      />
       <MainButton text={text.gameAdd.title} path={URL.gameAdd}/>
       <MainButton text={text.gameList.title} path={URL.gameList}/>
       <MainButton text={text.playerAdd.title} path={URL.playerAdd}/>

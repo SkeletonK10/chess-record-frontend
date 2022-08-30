@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 import axios from 'axios';
 
 import Page from '../../components/Page';
-import Title from './Title';
+import Title from '../../components/Title';
 import GameHeader from './GameHeader';
 import GameBody from './GameBody';
 import BackButton from '../../components/BackButton';
@@ -58,7 +58,10 @@ const Comp: React.FC = () => {
   const isEmpty = !row;
   return (
     <Page>
-      <Title id={Number(id)} />
+      <Title
+        title={text.gameView.title}
+        subTitle={text.gameView.subTitle}
+      />
       {isEmpty ? (
         <NoResultStyle>
           {text.gameView.noRecord}

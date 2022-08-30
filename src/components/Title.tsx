@@ -1,10 +1,9 @@
 import React from 'react';
 import styled from '@emotion/styled'
 
-import { text } from '../../data'
-
 interface TitleProps {
-  id?: number;
+  title: string;
+  subTitle: string;
 }
 
 const Title = styled.div`
@@ -24,20 +23,17 @@ const SubTitle = styled.div`
   display: flex;
   justify-content: center;
   
-  text-align: center;
-  white-space: pre-wrap;
-  
-  font-size: 1.3rem;
+  font-size: 1.4rem;
 `;
 
-const Comp: React.FC<TitleProps> = (props) => {
+const Comp: React.FC<TitleProps> = ({ title, subTitle }) => {
   return (
     <div>
       <Title>
-        {text.gameModify(props.id).title}
+        {title}
       </Title>
       <SubTitle>
-        {text.gameModify(props.id).subTitle}
+        {subTitle}
       </SubTitle>
     </div>
   );

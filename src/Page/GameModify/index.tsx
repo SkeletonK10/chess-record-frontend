@@ -5,7 +5,7 @@ import styled from '@emotion/styled';
 import axios from 'axios';
 
 import Page from '../../components/Page';
-import Title from './Title';
+import Title from '../../components/Title';
 import GameHeader from './GameHeader';
 import GameBody from './GameBody';
 import BackButton from '../../components/BackButton';
@@ -74,11 +74,11 @@ const Comp: React.FC = () => {
         alert(response.data.msg);
       }
       else {
-        alert(text.gameModify().success);
+        alert(text.gameModify.success);
         window.location.href = `${URL.gameView}${id}`;
       }
     } catch (err) {
-      alert(text.gameModify().error);
+      alert(text.gameModify.error);
     } finally {
       console.log(data);
     }
@@ -92,9 +92,12 @@ const Comp: React.FC = () => {
   const isEmpty = !row;
   return (
     <Page>
-      <Title id={Number(id)} />
+      <Title
+        title={text.gameModify.title}
+        subTitle={text.gameModify.subTitle}
+      />
       {isEmpty ? (
-        <NoResultStyle>{text.gameView().noRecord}</NoResultStyle>
+        <NoResultStyle>{text.gameModify.noRecord}</NoResultStyle>
       ) : (
           <FormStyle onSubmit={handleSubmit(onSubmit)}>
             <GameHeader

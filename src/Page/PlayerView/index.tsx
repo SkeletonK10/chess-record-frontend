@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 import Page from '../../components/Page';
-import Title from './Title';
+import Title from '../../components/Title';
 import PlayerHeader from './PlayerHeader';
 import PlayerBody from './PlayerBody';
 import BackButton from '../../components/BackButton';
@@ -34,7 +34,10 @@ const Comp: React.FC = () => {
   
   return (
     <Page>
-      <Title />
+      <Title
+        title={text.playerView.title}
+        subTitle={text.playerView.subTitle}
+      />
       {(!player || !gameList) ? (
         <>
           {text.playerView.noRecord}
