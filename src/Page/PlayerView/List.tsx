@@ -82,11 +82,7 @@ const Comp: React.FC<PlayerGameListProps> = ({ list }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   
-  const isEmpty = !list;
-  
-  const Comps = isEmpty ?
-  undefined :
-  list.slice(offset, offset + limit).map((row: GameListEntry, index: number) => {
+  const Comps = list.slice(offset, offset + limit).map((row: GameListEntry, index: number) => {
     return (
       <tr key={index}>
         <TDStyle>{row.white}</TDStyle>
@@ -104,21 +100,19 @@ const Comp: React.FC<PlayerGameListProps> = ({ list }) => {
   return (
     <ListDivStyle>
       <ListTitleStyle>기록된 경기 목록</ListTitleStyle>
-      {isEmpty ? (text.gameList.noRecord) : (
-        <TableStyle>
-          <thead>
-            <tr>
-              <THStyle>백 선수</THStyle>
-              <THStyle>흑 선수</THStyle>
-              <THStyle>결과</THStyle>
-              <THStyle>상세</THStyle>
-            </tr>
-          </thead>
-          <tbody>
-            {Comps}
-          </tbody>
-        </TableStyle>
-      )}
+      <TableStyle>
+        <thead>
+          <tr>
+            <THStyle>백 선수</THStyle>
+            <THStyle>흑 선수</THStyle>
+            <THStyle>결과</THStyle>
+            <THStyle>상세</THStyle>
+          </tr>
+        </thead>
+        <tbody>
+          {Comps}
+        </tbody>
+      </TableStyle>
       <PageControllerStyle>
         {page <= 1 ? (<></>) : (
           <LinkButton onClick={() => setPage(page - 1)}>

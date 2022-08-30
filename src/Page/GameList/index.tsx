@@ -5,6 +5,7 @@ import Page from '../../components/Page';
 import Title from '../../components/Title';
 import List from './List';
 import BackButton from '../../components/BackButton';
+import NoRecord from '../../components/NoRecord';
 
 import { GameList } from '../../data/types';
 import { text } from '../../data';
@@ -28,7 +29,7 @@ const Comp: React.FC = () => {
         title={text.gameList.title}
         subTitle={text.gameList.subTitle}
       />
-      {!gameList ? (<><br />{text.gameList.noRecord}</>) : (<List list={gameList.list} />)}
+      {!gameList ? (<NoRecord message={text.gameList.noRecord} />) : (<List list={gameList.list} />)}
       <BackButton />
     </Page>
   );

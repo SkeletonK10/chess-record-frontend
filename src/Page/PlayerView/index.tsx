@@ -7,6 +7,7 @@ import Title from '../../components/Title';
 import PlayerHeader from './PlayerHeader';
 import PlayerBody from './PlayerBody';
 import BackButton from '../../components/BackButton';
+import NoRecord from '../../components/NoRecord';
 
 import { text } from '../../data';
 import { GameList, PlayerInfo } from '../../data/types';
@@ -40,7 +41,7 @@ const Comp: React.FC = () => {
       />
       {(!player || !gameList) ? (
         <>
-          {text.playerView.noRecord}
+          <NoRecord message={text.playerView.noRecord} />
           <BackButton />
         </>
       ) : (

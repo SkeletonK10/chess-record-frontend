@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import styled from '@emotion/styled';
 import { MdReadMore } from 'react-icons/md';
 
-import { URL, text, palette } from "../../data";
+import { URL, palette } from "../../data";
 import { GameListEntry } from "../../data/types";
 
 interface GameListProps {
@@ -76,11 +76,7 @@ const Comp: React.FC<GameListProps> = ( { list } ) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   
-  const isEmpty = !list;
-  
-  const Comps = isEmpty ?
-  undefined :
-  list.slice(offset, offset + limit).map((row: GameListEntry, index: number) => {
+  const Comps = list.slice(offset, offset + limit).map((row: GameListEntry, index: number) => {
     return (
       <tr key={index}>
         <TDStyle>{row.white}</TDStyle>
@@ -97,21 +93,19 @@ const Comp: React.FC<GameListProps> = ( { list } ) => {
   
   return (
     <ListDivStyle>
-      {isEmpty ? (text.gameList.noRecord) : (
-        <TableStyle>
-          <thead>
-            <tr>
-              <THStyle>백 선수</THStyle>
-              <THStyle>흑 선수</THStyle>
-              <THStyle>결과</THStyle>
-              <THStyle>상세</THStyle>
-            </tr>
-          </thead>
-          <tbody>
-            {Comps}
-          </tbody>
-        </TableStyle>
-      )}
+      <TableStyle>
+        <thead>
+          <tr>
+            <THStyle>백 선수</THStyle>
+            <THStyle>흑 선수</THStyle>
+            <THStyle>결과</THStyle>
+            <THStyle>상세</THStyle>
+          </tr>
+        </thead>
+        <tbody>
+          {Comps}
+        </tbody>
+      </TableStyle>
       <PageControllerStyle>
         {page <= 1 ? (<></>) : (
           <LinkButton onClick={() => setPage(page - 1)}>
