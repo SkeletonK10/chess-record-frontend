@@ -61,7 +61,7 @@ const Comp: React.FC = () => {
       <Title id={Number(id)} />
       {isEmpty ? (
         <NoResultStyle>
-          {text.gameView().noRecord}
+          {text.gameView.noRecord}
           <BackButton />
         </NoResultStyle>
       ) : (

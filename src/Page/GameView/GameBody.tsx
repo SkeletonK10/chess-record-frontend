@@ -88,14 +88,14 @@ const Comp: React.FC<GameBodyProps> = (props: GameBodyProps) => {
       <TextareaStyle
         readOnly={true}
         value={game.notation}
-        placeholder={text.gameView().noNotation}
+        placeholder={text.gameView.noNotation}
       />
       
       <b>간단한 설명</b>
       <TextareaStyle
         readOnly={true}
         value={game.description}
-        placeholder={text.gameView().noDescription}
+        placeholder={text.gameView.noDescription}
       />
       
     </GameBodyStyle>

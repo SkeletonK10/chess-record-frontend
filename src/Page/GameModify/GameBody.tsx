@@ -90,13 +90,13 @@ const Comp: React.FC<GameBodyProps> = (props: GameBodyProps) => {
       <b>기보</b>
       <TextareaStyle {...register('notation')}
         defaultValue={game.notation}
-        placeholder={text.gameView().noNotation}
+        placeholder={text.gameView.noNotation}
       />
       
       <b>간단한 설명</b>
       <TextareaStyle {...register('description')}
         defaultValue={game.description}
-        placeholder={text.gameView().noDescription}
+        placeholder={text.gameView.noDescription}
       />
       
     </GameBodyStyle>
