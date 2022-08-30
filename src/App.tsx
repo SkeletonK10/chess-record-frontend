@@ -1,15 +1,15 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-import MainPage from './components/Page/MainPage';
-import NotFound from './components/Page/NotFound';
-import GameView from './components/Page/GameView';
-import GameList from './components/Page/GameList';
-import GameAdd from './components/Page/GameAdd';
-import GameModify from './components/Page/GameModify';
-import PlayerAdd from './components/Page/PlayerAdd';
-import PlayerList from './components/Page/PlayerList';
-import PlayerView from './components/Page/PlayerView';
+import MainPage from './Page/MainPage';
+import NotFound from './Page/NotFound';
+import GameView from './Page/GameView';
+import GameList from './Page/GameList';
+import GameAdd from './Page/GameAdd';
+import GameModify from './Page/GameModify';
+import PlayerAdd from './Page/PlayerAdd';
+import PlayerList from './Page/PlayerList';
+import PlayerView from './Page/PlayerView';
 
 const App: React.FC = () => {
   return (
