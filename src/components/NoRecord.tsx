@@ -12,7 +12,7 @@ const NoRecordContainerStyle = styled.div`
   display: flex;
   justify-content: center;
   
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 `;
 
 const Comp: React.FC<NoRecordProps> = ({ message }) => {
