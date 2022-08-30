@@ -32,6 +32,36 @@ const BorderStyle = styled.div`
   border: 25px solid ${palette.wood};
 `;
 
+const ButtonContainerStyle = styled.div`
+  width: 100%;
+  
+  display: flex;
+  justify-content: space-around;
+`;
+
+const NotationBackStyle = styled.div`
+  width: 20%;
+  
+  margin: 1.5%;
+  border: 3px solid ${palette.wood};
+  
+  background-color: ${palette.ivory};
+  
+  cursor: pointer;
+  
+  &:hover {
+    background-color: ${palette.ivoryHover};
+  }
+  
+  &:active {
+    background-color:${palette.ivoryActive};
+  }
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 const TextareaStyle = styled.textarea`
   width: 100%;
   height: 100px;
@@ -73,6 +103,17 @@ const Comp: React.FC<NotationProps> = (props: NotationProps) => {
     } else { return false; }
   }
   
+  const notationBack = () => {
+    const prevGame = new Chess();
+    const moves = game.history();
+    moves.pop();
+    for (let i = 0; i < moves.length; i++) {
+      prevGame.move(moves[i]);
+    }
+    setValue("notation", prevGame.pgn());
+    setGame(prevGame);
+  }
+  
   return (
     <NotationStyle>
       <RadioStyle onChange={(e) => { initGame() }}>
@@ -93,6 +134,12 @@ const Comp: React.FC<NotationProps> = (props: NotationProps) => {
                 onPieceDrop={onDrop}
               />
             </BorderStyle>
+            <ButtonContainerStyle>
+              <NotationBackStyle
+                onClick={notationBack}>
+                {'<-'}
+                </NotationBackStyle>
+            </ButtonContainerStyle>
           </>
         ) : undefined
       }
