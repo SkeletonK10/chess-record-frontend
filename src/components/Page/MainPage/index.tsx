@@ -11,7 +11,7 @@ import { URL, text } from '../../../data';
 
 const Comp: React.FC = () => {
   const connectionTest= async () => {
-    await axios.get(`${process.env.REACT_APP_BACKEND_URL}`);
+    await axios.get(`${process.env.REACT_APP_BACKEND_URL}/`);
   }
   useEffect(() => {
     connectionTest();
