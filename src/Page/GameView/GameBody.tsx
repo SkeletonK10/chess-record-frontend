@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { AiFillExclamationCircle } from 'react-icons/ai';
 
 import { text, palette } from '../../data';
 import { GameInfo } from '../../data/types';
@@ -63,17 +62,21 @@ const TextareaStyle = styled.textarea`
   font-size: 1.2rem;
 `;
 
-const NotationTitleContainerStyle = styled.div`
-  position: relative;
-`;
-
-const NotationNotCorrectIconStyle = styled.div`
+const IncorrectNotationStyle = styled.div`
+  width: 85%;
+  
+  background-color: ${palette.ivory}
+  
   position: absolute;
   
-  left: 90px;
-  top: 2.5px;
-
-`
+  right: 100px;
+  top: 30px;
+  
+  opacity: 1;
+  
+  border: 2px solid ${palette.wood};
+  font-size: 1.2rem;
+`;
 
 const InfoRow: React.FC<InfoRowProps> = (props: InfoRowProps) => {
   return (
@@ -99,14 +102,12 @@ const Comp: React.FC<GameBodyProps> = (props: GameBodyProps) => {
         </tbody>
       </TableStyle>
       
-      <NotationTitleContainerStyle>
-        <b>기보</b>
-        {isNotationCorrect ? (<></>) : (
-          <NotationNotCorrectIconStyle>
-            <AiFillExclamationCircle />
-          </NotationNotCorrectIconStyle>
-        )}
-      </NotationTitleContainerStyle>
+      <b>기보</b>
+      {isNotationCorrect ? (<></>) : (
+        <IncorrectNotationStyle>
+          {text.gameView.incorrectNotation}
+        </IncorrectNotationStyle>
+      )}
       
       <TextareaStyle
         readOnly={true}

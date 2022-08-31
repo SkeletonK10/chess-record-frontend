@@ -26,6 +26,7 @@ export const text = {
     noRecord: '기록된 경기 결과가 없습니다!',
     noNotation: '기록된 기보가 없습니다!',
     noDescription: '기록된 정보가 없습니다!',
+    incorrectNotation: `오프닝 통계에 들어가지 않는 기보입니다!\n올바른 기보 형식으로 수정해 주세요.`,
   },
   
   gameModify: {
