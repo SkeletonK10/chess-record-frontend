@@ -52,11 +52,6 @@ const LinkButton = styled.div`
   cursor: pointer;
 `;
 
-const SubStyle = styled.div`
-  vertical-align: -0.5em;
-  font-size: 0.5em;
-`;
-
 const Comp: React.FC<ListProps> = (props: ListProps) => {
   const navigate = useNavigate();
   const [rows, setRows] = useState([]);
@@ -82,7 +77,7 @@ const Comp: React.FC<ListProps> = (props: ListProps) => {
         <TDStyle>{row.rating}</TDStyle>
         <TDStyle>
           <LinkButton onClick={() => navigate(`${URL.playerView}${row.id}`)}>
-            <MdReadMore /><SubStyle>{row.id}</SubStyle>
+            <MdReadMore />
           </LinkButton>
         </TDStyle>
       </tr>

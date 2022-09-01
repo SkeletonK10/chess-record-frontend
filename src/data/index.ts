@@ -83,6 +83,8 @@ export const palette = {
   ivoryHover: '#fff9dc',
   ivoryActive: '#c2bda4',
   
+  ivoryBox:'#f1e0c8',
+  
   wood: '#8c531b',
   woodHover: '#bb6f24',
   woodActive: '#704316',

@@ -5,12 +5,13 @@ import { useNavigate } from 'react-router-dom';
 import { palette } from '../../data';
 
 const MainButton = styled.div`
-  width: 80%;
-  height: 80px;
-  margin-top: 20px;
+  width: 60%;
+  height: 60px;
+  margin-top: 30px;
+  margin-bottom: 10px;
   border: 3px solid ${palette.wood};
   border-radius: 100px;
-  background-color: ${palette.ivory};
+  background-color: ${palette.ivoryBox};
   
   cursor: pointer;
   
@@ -26,7 +27,7 @@ const MainButton = styled.div`
   justify-content: center;
   align-items: center;
   
-  font-size: 2.7rem;
+  font-size: 2rem;
 `;
 
 interface ButtonProps {

@@ -49,11 +49,6 @@ const LinkButton = styled.div`
   cursor: pointer;
 `;
 
-const SubStyle = styled.div`
-  vertical-align: -0.5em;
-  font-size: 0.5em;
-`;
-
 const PageControllerStyle = styled.div`
   margin-top: 4%;
   
@@ -84,7 +79,7 @@ const Comp: React.FC<GameListProps> = ( { list } ) => {
         <TDStyle>{row.result}</TDStyle>
         <TDStyle>
           <LinkButton onClick={() => navigate(`${URL.gameView}${row.id}`)}>
-            <MdReadMore /><SubStyle>{row.id}</SubStyle>
+            <MdReadMore />
           </LinkButton>
         </TDStyle>
       </tr>

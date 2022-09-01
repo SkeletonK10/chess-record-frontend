@@ -14,6 +14,7 @@ const Title = styled.div`
   align-items: flex-end;
   
   font-size: 3rem;
+  font-weight: bold;
 `;
 
 const SubTitle = styled.div`
@@ -23,7 +24,7 @@ const SubTitle = styled.div`
   display: flex;
   justify-content: center;
   
-  font-size: 1.4rem;
+  font-size: 1.3rem;
 `;
 
 const Comp: React.FC<TitleProps> = ({ title, subTitle }) => {

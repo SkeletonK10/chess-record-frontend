@@ -42,10 +42,13 @@ const TableStyle = styled.table`
 `;
 
 const TRStyle = styled.tr`
+  height: 30px;
 `;
 
 const TableIndexStyle = styled.td`
   width: 30%;
+  
+  font-weight: 600;
 `;
 
 const TableContentStyle = styled.td`
@@ -70,7 +73,7 @@ const Comp: React.FC<PlayerBodyProps> = ({ player, gameList }: PlayerBodyProps) 
           <InfoRow index='이름' value={player.name} />
           <InfoRow index='아이디' value={player.userid} />
           <InfoRow index='현재 레이팅' value={player.rating} />
-          <InfoRow index='전적' value={`${summary.total}전 ${summary.win}승 ${summary.draw}무 ${summary.lose}패`} />
+          <InfoRow index='전적' value={`${summary.total}전 ${summary.win}승 ${summary.draw}무 ${summary.lose}패 ${summary.winRate}`} />
         </tbody>
       </TableStyle>
       <List list={gameList.list} />
