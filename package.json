@@ -1,6 +1,6 @@
 {
   "name": "chess-record-frontend",
-  "version": "0.5.4",
+  "version": "0.5.5",
   "private": true,
   "dependencies": {
     "@emotion/styled": "^11.9.3",
