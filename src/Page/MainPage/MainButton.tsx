@@ -9,18 +9,19 @@ const MainButton = styled.div`
   height: 60px;
   margin-top: 30px;
   margin-bottom: 10px;
-  border: 3px solid ${palette.wood};
   border-radius: 100px;
-  background-color: ${palette.ivoryBox};
-  
+  background-color: ${palette.ivoryHover};
+  border: 3px solid ${palette.ivoryHover};
   cursor: pointer;
   
   &:hover {
     background-color: ${palette.ivoryHover};
+    border: 3px solid ${palette.wood};
   }
   
   &:active {
     background-color:${palette.ivoryActive};
+    border: 3px solid ${palette.wood};
   }
   
   display: flex;

@@ -18,14 +18,18 @@ const Comp: React.FC = () => {
   }, []);
   return (
     <Page>
-      <MainImage />
+      <div style={{height: "40px"}} />
       <Title
         title={text.main.title}
         subTitle={text.main.subTitle}
       />
-      <MainButton text={text.gameAdd.title} path={URL.gameAdd}/>
-      <MainButton text={text.gameList.title} path={URL.gameList}/>
-      <MainButton text={text.playerAdd.title} path={URL.playerAdd}/>
+      <div style={{height: "40px"}} />
+      <MainButton text={text.gameAdd.title} path={URL.gameAdd} />
+      <div style={{height: "20px"}} />
+      <MainButton text={text.gameList.title} path={URL.gameList} />
+      <div style={{height: "20px"}} />
+      <MainButton text={text.playerAdd.title} path={URL.playerAdd} />
+      <div style={{height: "20px"}} />
       <MainButton text={text.playerList.title} path={URL.playerList}/>
     </Page>
   );

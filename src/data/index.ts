@@ -11,7 +11,7 @@ export const URL = {
 
 export const text = {
   main: {
-    title: '체스 데이터 저장소',
+    title: `KU's Gambit`,
     subTitle: 'KUAAA의 체스 경기 데이터를 저장합니다.',
   },
   
@@ -85,7 +85,7 @@ export const palette = {
   
   ivoryBox:'#f1e0c8',
   
-  wood: '#8c531b',
+  wood: '#8c531b', //'#8c531b','#5e4125' 둘 중 택1
   woodHover: '#bb6f24',
   woodActive: '#704316',
 };
