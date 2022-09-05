@@ -25,22 +25,24 @@ const ListDivStyle = styled.div`
 const TableStyle = styled.table`
   width: 95%;
   
-  border: 3px solid ${palette.wood};
+  tr td {
+    border-bottom: 2px solid ${palette.wood};
+  }
+  
+  tr:last-child td {
+    border-bottom: none;
+  }
   border-collapse: collapse;
 `;
 
 const THStyle = styled.th`
-  border: 3px solid ${palette.wood};
   font-weight: bold;
 `;
 
 const TDStyle = styled.td`
-  padding-left: 4px;
-  padding-right: 4px;
+  padding: 4px;
   
   text-align: center;
-  
-  border: 3px solid ${palette.wood};
 `;
 
 const LinkButton = styled.div`
