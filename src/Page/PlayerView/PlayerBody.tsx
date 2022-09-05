@@ -28,7 +28,7 @@ const PlayerBodyStyle = styled.div`
 `;
 
 const TableStyle = styled.table`
-  width: 85%;
+  width: 90%;
   
   tr td {
     border-bottom: 2px solid ${palette.wood};
@@ -73,7 +73,8 @@ const Comp: React.FC<PlayerBodyProps> = ({ player, gameList }: PlayerBodyProps) 
           <InfoRow index='이름' value={player.name} />
           <InfoRow index='아이디' value={player.userid} />
           <InfoRow index='현재 레이팅' value={player.rating} />
-          <InfoRow index='전적' value={`${summary.total}전 ${summary.win}승 ${summary.draw}무 ${summary.lose}패 ${summary.winRate}`} />
+          <InfoRow index='전적' value={`${summary.total}전 ${summary.win}승 ${summary.draw}무 ${summary.lose}패`} />
+          <InfoRow index='승률' value={summary.winRate} />
         </tbody>
       </TableStyle>
       <List list={gameList.list} />

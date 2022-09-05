@@ -25,7 +25,7 @@ const GameBodyStyle = styled.div`
 `;
 
 const TableStyle = styled.table`
-  width: 85%;
+  width: 90%;
   
   tr td {
     border-bottom: 2px solid ${palette.wood};
@@ -43,6 +43,8 @@ const TRStyle = styled.tr`
 
 const TableIndexStyle = styled.td`
   width: 30%;
+  
+  font-weight: 600;
 `;
 
 const TableContentStyle = styled.td`
