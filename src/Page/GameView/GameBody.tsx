@@ -44,11 +44,15 @@ const TRStyle = styled.tr`
 const TableIndexStyle = styled.td`
   width: 30%;
   
+  padding: 4px;
+  
   font-weight: 600;
 `;
 
 const TableContentStyle = styled.td`
   width: 70%;
+  
+  padding: 4px;
 `;
 
 const TextareaStyle = styled.textarea`
@@ -103,20 +107,19 @@ const Comp: React.FC<GameBodyProps> = (props: GameBodyProps) => {
           <InfoRow index='시간 제한' value={`${game.originaltime || '∞'} + ${game.incrementtime}`} />
         </tbody>
       </TableStyle>
-      
+      <div style={{height: '10px'}} />
       <b>기보</b>
       {isNotationCorrect ? (<></>) : (
         <IncorrectNotationStyle>
           {text.gameView.incorrectNotation}
         </IncorrectNotationStyle>
       )}
-      
       <TextareaStyle
         readOnly={true}
         value={game.notation}
         placeholder={text.gameView.noNotation}
       />
-      
+      <div style={{height: '10px'}} />
       <b>간단한 설명</b>
       <TextareaStyle
         readOnly={true}

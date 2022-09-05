@@ -42,17 +42,20 @@ const TableStyle = styled.table`
 `;
 
 const TRStyle = styled.tr`
-  height: 30px;
 `;
 
 const TableIndexStyle = styled.td`
   width: 30%;
+  
+  padding: 4px;
   
   font-weight: 600;
 `;
 
 const TableContentStyle = styled.td`
   width: 70%;
+  
+  padding: 4px;
 `;
 
 const InfoRow: React.FC<InfoRowProps> = (props: InfoRowProps) => {
