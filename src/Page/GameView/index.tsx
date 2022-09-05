@@ -24,8 +24,8 @@ const ModifyButtonStyle = styled.div`
   width: 35%;
   height: 10%;
 
-  margin-top: 1.5%;
-  margin-bottom: 1.5%;
+  margin-top: 3%;
+  margin-bottom: 3%;
 
   display: flex;
   justify-content: center;
