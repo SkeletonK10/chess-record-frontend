@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import axios from 'axios';
 
 import Page from '../../components/Page';
-import MainImage from './MainImage'
 import Title from '../../components/Title'
 import MainButton from './MainButton'
 

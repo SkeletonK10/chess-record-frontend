@@ -71,7 +71,7 @@ const TextareaStyle = styled.textarea`
 const IncorrectNotationStyle = styled.div`
   width: 85%;
   
-  background-color: ${palette.ivory}
+  background-color: ${palette.ivory};
   
   position: absolute;
   
